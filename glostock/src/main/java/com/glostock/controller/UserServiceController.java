@@ -10,10 +10,13 @@ public class UserServiceController {
 	//로그인페이지
 	@RequestMapping("/login")
 	public String login() { 
-		
 		return "user/login"; 
 	}
 	
+	@RequestMapping("/join")
+	public String join() {  
+		return "user/join";
+	}
 	
 	
 	
