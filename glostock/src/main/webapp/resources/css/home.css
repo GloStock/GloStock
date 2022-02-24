@@ -13,13 +13,7 @@ body {
     width: 100%;
 }
 
-header {
-    background-color: red;
-    height: 100px;
-}
-
 main {
-    /* background-color: blue; */
     min-height: 500px;
 }
 
@@ -34,9 +28,4 @@ main {
     overflow: hidden;
     width:0%;
     opacity:0;
-}
-
-footer {
-    background-color: green;
-    height: 100px;
 }
