@@ -5,14 +5,17 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="resources/css/home.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script src="index.js"></script>
 	<title>Glo Stock | 글로 스탁</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #54E6DE, pink) !important;
+        }
+    </style>
 </head>
 <body>
 <div id="body-container">
-	<header></header>
+	<%@include file="include/header.jsp"%>
 	<main>
 		<div class="main-banner">
 			<div class="container col-xxl-8 px-4 py-5">
@@ -89,7 +92,7 @@
 			</div>
 		</div>
 	</main>
-	<footer></footer>
+	<%@include file="include/footer.jsp"%>
 </div>
 </body>
 </html>
