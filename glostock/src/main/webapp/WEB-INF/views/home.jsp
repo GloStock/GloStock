@@ -17,6 +17,7 @@
 <div id="body-container">
 	<%@include file="include/header.jsp"%>
 	<main>
+		
 		<div class="main-banner">
 			<div class="container col-xxl-8 px-4 py-5">
 				<div class="row flex-lg-row-reverse align-items-center g-5 py-5">

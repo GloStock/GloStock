@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
+
+
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -44,6 +47,8 @@
   <link href="/resources/css/feed.css" rel="stylesheet">
 </head>
 <body>
+
+<%@ include file="../include/header.jsp" %>
 
 <div class="container">
   <header class="blog-header py-3">

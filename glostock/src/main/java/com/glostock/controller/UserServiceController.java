@@ -19,7 +19,9 @@ public class UserServiceController {
 	}
 
 	@RequestMapping("/feed")
-	public String feed() { return "user/feed";}
+	public String feed() { 
+		
+		return "user/feed";}
 	
 	
 	

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
+     <%@ include file="../include/header.jsp" %>
     <!doctype html>
 <html lang="en">
   <head>
@@ -65,7 +65,7 @@
     
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-    <%@ include file="../include/header.jsp" %>
+    
     
     
   </head>
