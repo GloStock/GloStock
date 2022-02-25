@@ -17,6 +17,9 @@ public class UserServiceController {
 	public String join() {  
 		return "user/join";
 	}
+
+	@RequestMapping("/feed")
+	public String feed() { return "user/feed";}
 	
 	
 	
