@@ -5,7 +5,28 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-02-24T23:00:00Z</updated>
+  <updated>2022-02-25T14:03:02Z</updated>
+  <entry>
+    <title>Spring Shell 2.1.0-M3 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/02/25/spring-shell-2-1-0-m3-is-now-available" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2022-02-25:4715</id>
+    <updated>2022-02-25T14:03:02Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Shell &lt;code&gt;2.1.0-M3&lt;/code&gt; has been released and is now available from &lt;a href="https://repo.spring.io/milestone"&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Notable changes include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Usual small fixes&lt;/li&gt;
+  &lt;li&gt;UI Component model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/50398/155499580-6353733b-6bd9-4993-917f-1e7b355a4b06.svg" alt="screencast" /&gt;&lt;/p&gt;
+&lt;p&gt;Please see the &lt;a href="https://github.com/spring-projects/spring-shell/releases/tag/v2.1.0-M3"&gt;release notes&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-shell/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-shell"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-shell/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-shell/docs/2.1.0-M2/site/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: InfoQ editor and Java Champion, Dr. Alex Blewitt</title>
     <link rel="alternate" href="https://spring.io/blog/2022/02/24/a-bootiful-podcast-infoq-editor-and-java-champion-dr-alex-blewitt" />
@@ -75,6 +96,20 @@
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.10"&gt;52 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.10/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.3.5 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/02/23/spring-batch-4-3-5-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2022-02-25:4714</id>
+    <updated>2022-02-23T21:09:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Batch 4.3.5 has been released to Maven Central repository. This patch release comes with a number of bug fixes, enhancements and dependency updates. You can find the complete change logs here: &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.3.5"&gt;4.3.5&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I would like to thank all contributors who had a role in this release!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on Github&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -995,43 +1030,6 @@ dependencyManagement {&#xD;
     <updated>2022-02-16T09:00:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, we look at how to use the MyBatis data mapper project&amp;rsquo;s new Spring Native hints to build GraalVM native images&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/EWWq3ts9Tv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - February 15th, 2022</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/02/15/this-week-in-spring-february-15th-2022" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-02-15:4698</id>
-    <updated>2022-02-16T03:09:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s dive right into it. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/02/09/spring-tips-io-io-it-s-off-to-work-we-go"&gt;Spring Tips: IO, IO, It&amp;rsquo;s Off To Work We Go&lt;/a&gt; - this video took off! In it, I introduce IO, NIO, and Netty as a way to understand what we mean when we talk about blocking and non-blocking.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-boot/docs/2.7.x-SNAPSHOT/reference/htmlsingle/"&gt;Spring Boot Reference Documentation has been updated to include Kotlin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://dev.to/kirekov/spring-never-rollback-readonly-transactions-28kb"&gt;Spring Data ? Never Rollback Readonly Transactions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/content/webinars/feb-1-whats-new-in-spring-boot-2-6"&gt;Feb 1 - What&amp;rsquo;s new in Spring Boot 2.6?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.jetbrains.com/kotlin/2022/02/kotlin-1-6-20-m1-released/"&gt;Preview of Kotlin 1.6.20 With Prototype of Context Receivers, Parallel Compilation on JVM, Incremental Compilation in JS, and More | The Kotlin Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Java&amp;rsquo;s &lt;a href="https://blog.frankel.ch/system-logger/"&gt;System Logger&lt;/a&gt; abstraction&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1493607429573128205"&gt; Deploying Carvel packages on TKGS workload clusters in vSphere with?Tanzu &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/sbstp/kubie"&gt;sbstp/kubie: A more powerful alternative to kubectx and kubens&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;there&amp;rsquo;s a fourth revision &lt;a href="https://openjdk.java.net/jeps/8280173"&gt;to Vectors (not the collection type, &lt;em&gt;per se&lt;/em&gt;) in the JDK&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;there&amp;rsquo;s also a new JEP draft &lt;a href="https://openjdk.java.net/jeps/8280836"&gt;introducing sequenced collections&lt;/a&gt;, where the ordering of the collection is a property of the collection itself&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: IO, IO, It's Off To Work We Go</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/02/09/spring-tips-io-io-it-s-off-to-work-we-go" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-02-10:4695</id>
-    <updated>2022-02-10T03:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;Spring Tips&lt;/em&gt;! In this installment, Josh Long (@starbuxman) looks at the wide and wonderful world of IO on the JVM. &lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/eKfNoT07k_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
