@@ -13,4 +13,10 @@ public class CompanyController {
         return "company/show";
     }
 
+    
+    //apitest
+    @RequestMapping("/apitest")
+    public String apitest() {
+        return "company/apitest";
+    }
 }
