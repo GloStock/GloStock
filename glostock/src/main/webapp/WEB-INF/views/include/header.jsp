@@ -13,7 +13,7 @@ margin:0 auto;
 .wrapper{
 width: 1200px;
     height: 100%;
-    margin: 20px auto;
+    margin: 0 auto;
     display: flex;
     z-index: 20;
     position: relative;
