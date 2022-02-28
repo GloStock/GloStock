@@ -22,6 +22,15 @@
 
 
   <style>
+    .blog-post {
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 5px 15px -6px #777;
+      border: #E5E5E5 1px solid;
+      padding: 25px;
+      border-radius: 20px;
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -65,9 +74,9 @@
 
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">U.S</a>
-      <a class="p-2 link-secondary" href="#">Korea</a>
-      <a class="p-2 link-secondary" href="#">Japan</a>
+      <a class="p-2 link-secondary" href="#">Home</a>
+      <a class="p-2 link-secondary" href="#">My Feed</a>
+      <a class="p-2 link-secondary" href="#">My Following</a>
       <a class="p-2 link-secondary" href="#">Europe</a>
       <a class="p-2 link-secondary" href="#">Hong Kong</a>
     </nav>
@@ -118,6 +127,7 @@
 
   <div class="row g-5">
     <div class="col-md-8">
+      <a class="btn btn-sm btn-outline-primary" href="#">글 쓰기</a>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         My Feed
       </h3>
@@ -293,7 +303,7 @@
           <h4 class="fst-italic">My Service</h4>
           <ol class="list-unstyled">
             <li><a href="#">세금계산기</a></li>
-            <li><a href="#">공모주 배당계샨</a></li>
+            <li><a href="#">공모주 배당계산</a></li>
             <li><a href="#">포트폴리오 상담</a></li>
           </ol>
         </div>
