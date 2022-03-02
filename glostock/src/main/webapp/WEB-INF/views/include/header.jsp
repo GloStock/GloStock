@@ -11,7 +11,6 @@ background-color: white;
 margin:0 auto;
 }
 .wrap{
-width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -36,7 +35,7 @@ flex: 1;
 </head>
 <body>
 	<div class="header">
-	
+	<div class="container">
     <header>
       <div class="wrap">
       
@@ -51,9 +50,11 @@ flex: 1;
         <li class="nav-item"><a href="#" class="nav-link link-dark">Pricing</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Help</a></li>
       </ul>
-      </div>      
-      </div>
+      </div> 
+      </div>     
+      
     </header>
+    </div>
     </div>
 <%--    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Twelfth navbar example">--%>
 <%--      <div class="container-fluid">--%>
