@@ -298,21 +298,54 @@
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-light rounded">
-          <h4 class="fst-italic">My Tab</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-        </div>
+<%--        <div class="p-4 mb-3 bg-light rounded">--%>
+<%--          <h4 class="fst-italic">My Tab</h4>--%>
+<%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
+<%--        </div>--%>
 
         <div class="p-4">
           <h4 class="fst-italic">My Following</h4>
           <ol class="list-unstyled mb-0">
-            <li><a href="#">$TSLA</a></li>
-            <li><a href="#">$AAPL</a></li>
-            <li><a href="#">$MSFT</a></li>
-            <li><a href="#">$AMZN</a></li>
-            <li><a href="#">$FB</a></li>
-            <li><a href="#">$GOOGL</a></li>
-            <li><a href="#">ADIDAS</a></li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=MSFT">$MSFT</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=AMZN">$AMZN</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=FB">$FB</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
           </ol>
         </div>
 
