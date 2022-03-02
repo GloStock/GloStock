@@ -10,7 +10,7 @@ height: 60px;
 background-color: white;
 margin:0 auto;
 }
-.wrapper{
+.wrap{
 width: 1200px;
     height: 100%;
     margin: 0 auto;
@@ -38,7 +38,7 @@ flex: 1;
 	<div class="header">
 	
     <header>
-      <div class="wrapper">
+      <div class="wrap">
       <table>
       <tr>
       <td class="logo">
