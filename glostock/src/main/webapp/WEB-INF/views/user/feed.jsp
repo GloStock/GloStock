@@ -1,5 +1,11 @@
+<%@page import="yahoofinance.YahooFinance"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="yahoofinance.Stock"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
+
+
+
 
 
 
@@ -60,6 +66,11 @@
     .card {
       margin-bottom: 5px;
     }
+    
+    .right {
+ 	 text-align: right;
+  	
+	}
 
   </style>
 
@@ -314,12 +325,38 @@
 <%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
 <%--        </div>--%>
 
+
+
+
+<%
+Stock TSLA = YahooFinance.get("TSLA"); //티커심볼가져오기
+BigDecimal price =  TSLA.getQuote().getPrice();//현재가
+BigDecimal PrevClose =  TSLA.getQuote().getPreviousClose();//전일종가
+BigDecimal ChangeInPercent =  TSLA.getQuote().getChangeInPercent();//일봉퍼센티지
+BigDecimal ChangeInPrice= price.subtract(PrevClose);
+%>
+
+
         <div class="p-4">
           <h4 class="fst-italic">My Following</h4>
           <ol class="list-unstyled mb-0">
             <li>
               <div class="card">
                 <div class="card-body">
+                
+                <table> 
+                <tr>
+                <td class="card-title"><a href="/company/show?ticker=TSLA"><h4>$TSLA</h4></a></td>
+                <td class="right"><h4><%=price%></h4></td>
+                </tr>
+                <tr>
+                <td class="right"><h6><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</h6></td>
+                </tr>
+                
+                </table>
+                
+                
+                
                   <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>

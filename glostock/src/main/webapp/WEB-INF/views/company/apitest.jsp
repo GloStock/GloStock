@@ -18,12 +18,11 @@
 
 
 
-Stock TSLA = YahooFinance.get("TSLA");
-//현재가, 전일가 뺀것, 퍼센티지 
+Stock TSLA = YahooFinance.get("TSLA"); //티커심볼가져오기
 
 System.out.println(TSLA.getQuote().getPrice()); //현재가
+System.out.println(TSLA.getQuote().getPreviousClose()); //전일종가
 System.out.println(TSLA.getQuote().getChangeInPercent()); //일봉퍼센티지
-TSLA.print();
 
 
 %>

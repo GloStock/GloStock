@@ -1,3 +1,4 @@
+
 <%@ page import="java.net.HttpURLConnection" %>
 <%@ page import="java.net.URL" %>
 <%@ page import="java.io.BufferedReader" %>
@@ -95,6 +96,9 @@
         e.printStackTrace();
     }
 
+    
+ 
+    
 %>
 
 <!doctype html>
