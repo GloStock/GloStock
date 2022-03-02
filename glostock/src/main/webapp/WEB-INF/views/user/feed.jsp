@@ -32,6 +32,7 @@
       border: #E5E5E5 1px solid;
       padding: 25px;
       border-radius: 20px;
+      background-color: white;
     }
 
     .bd-placeholder-img {
@@ -47,6 +48,19 @@
         font-size: 3.5rem;
       }
     }
+    body {
+      background: linear-gradient(to bottom right, #54E6DE, pink);
+	}
+
+    .main-banner {
+      background-image: url("/resources/img/main-feed-img.jpg");
+      background-position: center;
+    }
+
+    .card {
+      margin-bottom: 5px;
+    }
+
   </style>
 
 
@@ -58,38 +72,47 @@
 <body>
 
 <%@ include file="../include/header.jsp" %>
-
+<header>
 <div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 pt-1">
-        <a class="link-secondary" href="#"></a>
-      </div>
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Glo Stock</a>
-      </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <a class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Following</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Europe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hong Kong</a>
+          </li>
+        </ul>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+         &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
       </div>
     </div>
+  </nav>
+  </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">Home</a>
-      <a class="p-2 link-secondary" href="#">My Feed</a>
-      <a class="p-2 link-secondary" href="#">My Following</a>
-      <a class="p-2 link-secondary" href="#">Europe</a>
-      <a class="p-2 link-secondary" href="#">Hong Kong</a>
-    </nav>
-  </div>
-</div>
+  
+
 
 <main class="container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark main-banner">
     <div class="col-md-6 px-0">
       <h1 class="display-4 fst-italic">요즘 멘션이 많은 종목 TOP 10</h1>
       <p class="lead my-3">요즘 뭐가 대세인지 모르겠다고요? 좀처럼 감을 잡을 실 수 없으시다고요? <br> 그래서 준비했습니다!</p>
@@ -100,7 +123,7 @@
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
+        <div class="col p-4 d-flex flex-column position-static bg-white">
           <strong class="d-inline-block mb-2 text-primary">Personal Analysis</strong>
           <h3 class="mb-0">월드 리포드 Vol. 3</h3>
           <div class="mb-1 text-muted">Feb 25</div>
@@ -115,7 +138,7 @@
     </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
+        <div class="col p-4 d-flex flex-column position-static bg-white">
           <strong class="d-inline-block mb-2 text-success">Design</strong>
           <h3 class="mb-0">Post title</h3>
           <div class="mb-1 text-muted">Nov 11</div>
@@ -286,21 +309,54 @@
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-light rounded">
-          <h4 class="fst-italic">My Tab</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-        </div>
+<%--        <div class="p-4 mb-3 bg-light rounded">--%>
+<%--          <h4 class="fst-italic">My Tab</h4>--%>
+<%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
+<%--        </div>--%>
 
         <div class="p-4">
           <h4 class="fst-italic">My Following</h4>
           <ol class="list-unstyled mb-0">
-            <li><a href="#">$TSLA</a></li>
-            <li><a href="#">$AAPL</a></li>
-            <li><a href="#">$MSFT</a></li>
-            <li><a href="#">$AMZN</a></li>
-            <li><a href="#">$FB</a></li>
-            <li><a href="#">$GOOGL</a></li>
-            <li><a href="#">ADIDAS</a></li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=MSFT">$MSFT</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=AMZN">$AMZN</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=FB">$FB</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
           </ol>
         </div>
 
