@@ -23,9 +23,9 @@
 </head>
 <body>
 <footer class="blog-footer" style="background-color: #fff;">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white rounded">
       <div class="container">
-        <a class="navbar-brand" href="#">back to top</a>
+        <a class="navbar-brand" href="/">Glo Stock</a>
 
         <div class="collapse navbar-collapse" id="navbarsExample09">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -47,7 +47,7 @@
       </div>
     </nav>
   <br>
-  <small>© 2022 GloStock Financial LLC, All rights reserved. Member YoungHyun / JaeGwang / JuYoung </small>
+  <small>© 2022 GloStock Financial LLC, All rights reserved. Member YoungHyun / Jaekwang / JuYoung </small>
 </footer>
 </body>
 </html>

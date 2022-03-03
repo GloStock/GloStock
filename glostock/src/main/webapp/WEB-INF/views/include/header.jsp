@@ -44,7 +44,7 @@ flex: 1;
       </a>
       <div align="right">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link link-dark" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link link-dark" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Market</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Trade</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Pricing</a></li>
