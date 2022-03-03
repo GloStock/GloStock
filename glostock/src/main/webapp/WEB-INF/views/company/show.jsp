@@ -108,7 +108,11 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
-
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #54E6DE, pink) !important;
+        }
+    </style>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -168,7 +172,7 @@
                     <a class="link-secondary" href="#"></a>
                 </div>
                 <div class="col-4 text-center">
-                    <a class="blog-header-logo text-dark" href="#">Glo Stock</a>
+                    <a class="blog-header-logo text-dark" href="/">Glo Stock</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="link-secondary" href="#" aria-label="Search">
@@ -182,10 +186,10 @@
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 link-secondary" href="/user/feed">Home</a>
-                <a class="p-2 link-secondary" href="#">My Feed</a>
-                <a class="p-2 link-secondary" href="#">My Following</a>
-                <a class="p-2 link-secondary" href="#">Europe</a>
-                <a class="p-2 link-secondary" href="#">Hong Kong</a>
+                <a class="p-2 link-secondary" href="/user/feed">My Feed</a>
+                <a class="p-2 link-secondary" href="/user/follow">My Following</a>
+                <a class="p-2 link-secondary" href="/user/service">My Service</a>
+                <a class="p-2 link-secondary" href="/user/portfolio">My Portfolio</a>
             </nav>
         </div>
     </div>
@@ -196,7 +200,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="mx-auto">
-                <img src="<%=company_logo_url + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo"/>
+                <img src="<%=company_logo_url + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo" style="background-color: white;"/>
                 <h1 class="fw-light">$<%=company_ticker%> · <%=company_name%></h1>
                 <p class="lead text-muted">
                     <%

@@ -32,8 +32,15 @@ public class UserServiceController {
 	public String write() {
 		return "user/write";
 	}
+
+	@RequestMapping("/portfolio")
+	public String portfolio() {
+		return "user/portfolio";
+	}
 	
-	
-	
+	@RequestMapping("/service")
+	public String service() {
+		return "user/service";
+	}
 	
 }
