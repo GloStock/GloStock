@@ -1,3 +1,6 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="yahoofinance.YahooFinance"%>
+<%@page import="yahoofinance.Stock"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 
@@ -60,12 +63,7 @@
     .card {
       margin-bottom: 5px;
     }
-<<<<<<< HEAD
-    
-    
 
-=======
->>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
 
   </style>
 
@@ -321,7 +319,7 @@
 <%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
 <%--        </div>--%>
 
-<<<<<<< HEAD
+
 
 
 
@@ -334,16 +332,15 @@ BigDecimal ChangeInPrice= price.subtract(PrevClose);
 int compareResult = price.compareTo(PrevClose);
 %>
 
-=======
->>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
+
         <div class="p-4">
           <h4>My Following</h4>
           <ol class="list-unstyled mb-0">
   
             <li>
               <div class="card">
+              
                 <div class="card-body">
-<<<<<<< HEAD
                   <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=AAPL"><b>테슬라</b></a></p>
                   <div align="right">
                   <p class="card-text" style="font-size:28px;"><b><%=price%></b></p>
@@ -354,9 +351,6 @@ int compareResult = price.compareTo(PrevClose);
                   <p class="card-text" style="font-size:17px; color:blue;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b><
                   <%} %>  
                   </div>
-=======
-                  <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
               </div>
             </li>
@@ -365,7 +359,7 @@ int compareResult = price.compareTo(PrevClose);
                 <div class="card-body">
                   <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
->>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
+
                 </div>
               </div>
             </li>
