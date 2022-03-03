@@ -334,7 +334,7 @@ int compareResult = price.compareTo(PrevClose);
               <div class="card">
               
                 <div class="card-body">
-                  <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=AAPL"><b>테슬라</b></a></p>
+                  <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=TSLA"><b>테슬라</b></a></p>
                   <div align="right">
                   <p class="card-text" style="font-size:28px;"><b><%=price%></b></p>
                   <% 
