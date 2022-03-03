@@ -23,7 +23,15 @@ public class UserServiceController {
 		
 		return "user/feed";}
 	
+	@RequestMapping("/portfolio")
+	public String portfolio() {
+		return "user/portfolio";
+	}
 	
+	@RequestMapping("/help")
+	public String help() {
+		return "user/help";
+	}
 	
 	
 }

@@ -1,11 +1,5 @@
-<%@page import="yahoofinance.YahooFinance"%>
-<%@page import="java.math.BigDecimal"%>
-<%@page import="yahoofinance.Stock"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-
-
-
 
 
 
@@ -66,9 +60,12 @@
     .card {
       margin-bottom: 5px;
     }
+<<<<<<< HEAD
     
     
 
+=======
+>>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
 
   </style>
 
@@ -102,15 +99,12 @@
             <a class="nav-link" href="#">My Following</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Europe</a>
+            <a class="nav-link" href="#">My Service</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Hong Kong</a>
+            <a class="nav-link" href="#">My Porfolio</a>
           </li>
         </ul>
-        <form>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
          &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
       </div>
     </div>
@@ -141,22 +135,23 @@
           <a href="#" class="stretched-link">이번주 월드 리포드 보기</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+<%--          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>--%>
+          <img src="/resources/img/world-report-thumbnail2.jpg" width="200" height="250">
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static bg-white">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <strong class="d-inline-block mb-2 text-success">Daily Report</strong>
+          <h3 class="mb-0">데일리 리포트</h3>
+          <div class="mb-1 text-muted">Mar 3</div>
+          <p class="mb-auto">제 20대 대통령 선거 D-6일... 각 후보들의 경제와 외교 정책들을 살펴보는 시리즈... 오늘은 기호 1번 이재명 후보입니다.</p>
+          <a href="#" class="stretched-link">더 읽기...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+<%--          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>--%>
+          <img src="/resources/img/daily-report-thumbnail.jpg" width="200" height="250">
 
         </div>
       </div>
@@ -165,7 +160,9 @@
 
   <div class="row g-5">
     <div class="col-md-8">
-      <a class="btn btn-sm btn-outline-primary" href="#">글 쓰기</a>
+      <div style="float:right;">
+      <a class="btn btn-sm btn-outline-danger" href="#">글 쓰기</a>
+      </div>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         My Feed
       </h3>
@@ -311,8 +308,8 @@
       </article>
 
       <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled">Newer</a>
+        <a class="btn btn-outline-primary" href="#">위로</a>
+        <a class="btn btn-outline-secondary">더보기</a>
       </nav>
 
     </div>
@@ -324,6 +321,7 @@
 <%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
 <%--        </div>--%>
 
+<<<<<<< HEAD
 
 
 
@@ -336,6 +334,8 @@ BigDecimal ChangeInPrice= price.subtract(PrevClose);
 int compareResult = price.compareTo(PrevClose);
 %>
 
+=======
+>>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
         <div class="p-4">
           <h4>My Following</h4>
           <ol class="list-unstyled mb-0">
@@ -343,6 +343,7 @@ int compareResult = price.compareTo(PrevClose);
             <li>
               <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
                   <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=AAPL"><b>테슬라</b></a></p>
                   <div align="right">
                   <p class="card-text" style="font-size:28px;"><b><%=price%></b></p>
@@ -353,6 +354,18 @@ int compareResult = price.compareTo(PrevClose);
                   <p class="card-text" style="font-size:17px; color:blue;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b><
                   <%} %>  
                   </div>
+=======
+                  <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+>>>>>>> 118b4a9af66b15ba8b9d988c4a67a387ae02fa89
                 </div>
               </div>
             </li>
@@ -400,15 +413,7 @@ int compareResult = price.compareTo(PrevClose);
   </div>
 
 </main>
-
-<footer class="blog-footer">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer>
-
-
+<%@ include file="../include/footer.jsp" %>
 
 </body>
 </html>

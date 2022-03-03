@@ -11,7 +11,6 @@ background-color: white;
 margin:0 auto;
 }
 .wrap{
-width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -27,45 +26,35 @@ text-align: left;
 }
 .nav{
 flex: 1;
-    float: left;
+    float: right;
     position: relative;
-    padding-left: 150px;
+    padding-left: 50px;
 
 }
 </style>
 </head>
 <body>
 	<div class="header">
-	
+	<div class="container">
     <header>
       <div class="wrap">
-      <table>
-      <tr>
-      <td class="logo">
+      
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">  
        <span class="fs-4"><strong>Glo Stock</strong></span>
       </a>
-      </td>
-    
-      <td class="nav">
       <div align="right">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link link-dark" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link link-dark" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Market</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Trade</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Pricing</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Help</a></li>
       </ul>
-      </div>
-      </td>
-    
-      </tr>
-      </table>
+      </div> 
+      </div>     
       
-
-      
-      </div>
     </header>
+    </div>
     </div>
 <%--    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Twelfth navbar example">--%>
 <%--      <div class="container-fluid">--%>
