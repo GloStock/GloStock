@@ -19,23 +19,36 @@ public class UserServiceController {
 	}
 
 	@RequestMapping("/feed")
-	public String feed() { 
-		
-		return "user/feed";}
-	
+	public String feed() {
+		return "user/feed";
+	}
+
+	@RequestMapping("/follow")
+	public String follow() {
+		return "user/follow";
+	}
+
+	@RequestMapping("/write")
+	public String write() {
+		return "user/write";
+	}
+
 	@RequestMapping("/portfolio")
 	public String portfolio() {
 		return "user/portfolio";
 	}
 	
-	@RequestMapping("/help")
-	public String help() {
-		return "user/help";
+	@RequestMapping("/service")
+	public String service() {
+		return "user/service";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "user/mypage";
 	}
 	
+=======
+>>>>>>> cb6f517f56d3f5ce13d40e5e94482f55c7c6e522
 }
