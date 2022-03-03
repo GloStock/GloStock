@@ -19,21 +19,19 @@ public class UserServiceController {
 	}
 
 	@RequestMapping("/feed")
-	public String feed() {
-		return "user/feed";
-	}
-
-	@RequestMapping("/follow")
-	public String follow() {
-		return "user/follow";
-	}
-
-	@RequestMapping("/write")
-	public String write() {
-		return "user/write";
+	public String feed() { 
+		
+		return "user/feed";}
+	
+	@RequestMapping("/portfolio")
+	public String portfolio() {
+		return "user/portfolio";
 	}
 	
-	
+	@RequestMapping("/help")
+	public String help() {
+		return "user/help";
+	}
 	
 	
 }
