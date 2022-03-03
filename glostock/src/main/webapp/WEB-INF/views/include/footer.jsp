@@ -29,7 +29,7 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample09">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropup">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown09">
                 <li><a class="dropdown-item" href="#">Kor</a></li>
