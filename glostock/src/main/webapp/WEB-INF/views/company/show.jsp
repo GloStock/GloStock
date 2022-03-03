@@ -11,9 +11,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-
     String input_ticker = request.getParameter("ticker");
-    System.out.println(input_ticker);
 
     String company_ticker = "";
     String company_description = "";
@@ -96,9 +94,6 @@
         e.printStackTrace();
     }
 
-    
- 
-    
 %>
 
 <!doctype html>
@@ -109,7 +104,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Company Profile | Glo Stock (뉴스, 회사소개)</title>
+    <title><%=company_ticker%> Profile | Glo Stock</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -118,13 +113,6 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#7952b3">
 
     <link rel="stylesheet" href="/resources/css/show.css">
@@ -208,17 +196,17 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="mx-auto">
-                <img src="<%= company_logo_url + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo"/>
-                <h1 class="fw-light">$<%= company_ticker%> · <%= company_name%></h1>
+                <img src="<%=company_logo_url + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo"/>
+                <h1 class="fw-light">$<%=company_ticker%> · <%=company_name%></h1>
                 <p class="lead text-muted">
                     <%
                         if (company_description_ko == "") {
                             %>
-                                <%= company_description %>
+                                <%=company_description%>
                             <%
                         } else {
                             %>
-                                <%= company_description_ko%>
+                                <%=company_description_ko%>
                             <%
                         }
                     %>
@@ -235,8 +223,8 @@
                     }
                 %>
                 <p>
-                    <a href="<%= company_url%>" class="btn btn-primary my-2">회사 홈페이지로</a>
-                    <a href="<%= "https://finance.yahoo.com/quote/" + company_ticker%>" class="btn btn-secondary my-2">야후 파이낸스로</a>
+                    <a href="<%=company_url%>" class="btn btn-primary my-2">회사 홈페이지로</a>
+                    <a href="<%="https://finance.yahoo.com/quote/" + company_ticker%>" class="btn btn-secondary my-2">야후 파이낸스로</a>
                 </p>
             </div>
         </div>
@@ -326,11 +314,9 @@
             </div>
         </div>
     </div>
-
 </main>
 
 <%@ include file="../include/footer.jsp" %>
-
 
 <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
