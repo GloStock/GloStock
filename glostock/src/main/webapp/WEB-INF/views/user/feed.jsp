@@ -1,3 +1,6 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="yahoofinance.YahooFinance"%>
+<%@page import="yahoofinance.Stock"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 
@@ -54,11 +57,13 @@
       margin-bottom: 5px;
     }
 
+
   </style>
 
 
   <!-- Custom styles for this template -->
   <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  
   <!-- Custom styles for this template -->
   <link href="/resources/css/feed.css" rel="stylesheet">
 </head>
@@ -307,14 +312,38 @@
 <%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
 <%--        </div>--%>
 
+
+
+
+
+<%
+Stock TSLA = YahooFinance.get("TSLA"); //티커심볼가져오기
+BigDecimal price =  TSLA.getQuote().getPrice();//현재가
+BigDecimal PrevClose =  TSLA.getQuote().getPreviousClose();//전일종가
+BigDecimal ChangeInPercent =  TSLA.getQuote().getChangeInPercent();//일봉퍼센티지
+BigDecimal ChangeInPrice= price.subtract(PrevClose);
+int compareResult = price.compareTo(PrevClose);
+%>
+
+
         <div class="p-4">
-          <h4 class="fst-italic">My Following</h4>
+          <h4>My Following</h4>
           <ol class="list-unstyled mb-0">
+  
             <li>
               <div class="card">
+              
                 <div class="card-body">
-                  <h5 class="card-title"><a href="/company/show?ticker=TSLA">$TSLA</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=AAPL"><b>테슬라</b></a></p>
+                  <div align="right">
+                  <p class="card-text" style="font-size:28px;"><b><%=price%></b></p>
+                  <% 
+                  if(compareResult>0) { %>
+                  <p class="card-text" style="font-size:17px; color:red;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b></p>
+                  <% } else if (compareResult<0) {%> 
+                  <p class="card-text" style="font-size:17px; color:blue;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b><
+                  <%} %>  
+                  </div>
                 </div>
               </div>
             </li>
@@ -323,9 +352,12 @@
                 <div class="card-body">
                   <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
                 </div>
               </div>
             </li>
+            
+            
             <li>
               <div class="card">
                 <div class="card-body">
@@ -334,6 +366,8 @@
                 </div>
               </div>
             </li>
+            
+            
             <li>
               <div class="card">
                 <div class="card-body">

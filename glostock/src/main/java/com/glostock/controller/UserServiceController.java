@@ -43,4 +43,9 @@ public class UserServiceController {
 		return "user/service";
 	}
 	
+	@RequestMapping("/help")
+	public String help() {
+		return "user/help";
+	}
+	
 }
