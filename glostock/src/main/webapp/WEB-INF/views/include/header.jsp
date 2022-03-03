@@ -48,7 +48,7 @@ flex: 1;
         <li class="nav-item"><a href="#" class="nav-link link-dark">Market</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Trade</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark">Help</a></li>
+        <li class="nav-item"><a href="/help" class="nav-link link-dark">Help</a></li>
       </ul>
       </div> 
       </div>     
