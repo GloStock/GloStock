@@ -25,7 +25,7 @@
 <footer class="blog-footer" style="background-color: #fff;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
       <div class="container">
-        <a class="navbar-brand" href="#">ON top</a>
+        <a class="navbar-brand" href="#">back to top</a>
 
         <div class="collapse navbar-collapse" id="navbarsExample09">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
