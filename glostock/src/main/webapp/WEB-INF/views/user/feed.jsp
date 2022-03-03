@@ -153,7 +153,9 @@
 
   <div class="row g-5">
     <div class="col-md-8">
+      <div style="float:right;">
       <a class="btn btn-sm btn-outline-danger" href="#">글 쓰기</a>
+      </div>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         My Feed
       </h3>
