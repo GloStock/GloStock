@@ -1,241 +1,144 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: rayjaelee
+  Date: 3/2/22
+  Time: 5:41 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>글 쓰기 | Glo Stock</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/pricing/">
-
-
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <meta name="theme-color" content="#7952b3">
-
-
+    <title>글쓰기 | Glo Stock</title>
+    
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
+    .box{
+    width:600px;
+    
+    margin:0 auto;
+    }
+    
+    .text_height_40{
+    height:40px;
+    }
+    
+    .text_height_10{
+    height:10px;
+    }
+    
+     body {
+      background: linear-gradient(to bottom right, #54E6DE, pink);
+	}
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
 </head>
 <body>
+<%@ include file="../include/header.jsp" %>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="check" viewBox="0 0 16 16">
-        <title>Check</title>
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-    </symbol>
-</svg>
-
-<div class="container py-3">
-    <%@ include file="../include/header.jsp" %>
-    <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/feed">My Feed</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/follow">My Following</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/service">My Service</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/user/portfolio">My Portfolio</a>
-                            </li>
-                        </ul>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                    </div>
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/user/feed">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/feed">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/follow">My Following</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/service">My Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/portfolio">My Portfolio</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
                 </div>
             </div>
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>20 users included</li>
-                            <li>10 GB of storage</li>
-                            <li>Priority email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-white bg-primary border-primary">
-                        <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>30 users included</li>
-                            <li>15 GB of storage</li>
-                            <li>Phone and email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </nav>
+    </div>
+</header>
+<main>
+<div class="box">
+<div class="container">
 
-        <h2 class="display-6 text-center mb-4">Compare plans</h2>
-
-        <div class="table-responsive">
-            <table class="table text-center">
-                <thead>
-                <tr>
-                    <th style="width: 34%;"></th>
-                    <th style="width: 22%;">Free</th>
-                    <th style="width: 22%;">Pro</th>
-                    <th style="width: 22%;">Enterprise</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row" class="text-start">Public</th>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-start">Private</th>
-                    <td></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                </tbody>
-
-                <tbody>
-                <tr>
-                    <th scope="row" class="text-start">Permissions</th>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-start">Sharing</th>
-                    <td></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-start">Unlimited members</th>
-                    <td></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-start">Extra security</th>
-                    <td></td>
-                    <td></td>
-                    <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="row">
-            <div class="col-12 col-md">
-                <img class="mb-2" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
-                <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+<div class="row">
+  <div class="text_height_40"></div>
+  <div class="col-lg-12">
+    <h3 class="pb-2 fst-italic border-bottom">Feed Register</h3>
+  </div>
+  <!-- /.col-lg-12 -->
+  
 </div>
+<!-- /.row -->
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header" style="background-color: #000; font-weight: bold; color: white;">Board Register</div>
+      <div class="card-body">
 
 
 
+        <form role="form" action="register" method="post" id="regform">
+          <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" name="title" id="title">
+          </div>
+          
+          <div class="form-group">
+            <label>Source</label>
+            <input class="form-control" name="title" id="source">
+          </div>
+          
+          <div class="form-group">
+            <label>Tag</label>
+            <input class="form-control" name="title" id="tag">
+          </div>
+          
+          <div class="form-group">
+            <label>Upload</label>
+ 			<input type="file" class="form-control" id="inputGroupFile">
+		  </div>
+
+          <div class="form-group">
+            <label>Content</label>
+            <textarea class="form-control" style="height:300px;" name="content" id="content"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>writer</label>
+            <input class="form-control" name="writer" id="writer">
+          </div>
+          <div class="text_height_10"></div>
+          <button type="submit" style="background-color: #000; font-weight: normal; color: white;">등록</button>
+          <button type="button" style="background-color: #000; font-weight: normal; color: white;">취소</button>
+        </form>
+<!-- 
+등록 클릭시 title, content, writer값을 검증 처리하는 스크립트
+취소시 cri.pageNum과 cri.count값을 전달하여 처리하기
+$("#아이디") HTML 속성에 한번에 접근...val() => 해당 아이디의 값에 접근하는 함수
+ -->
+
+
+      </div>
+      <!--  end card-body -->
+    </div>
+    <!--  end card-body -->
+  </div>
+  <!-- end card -->
+</div>
+<!-- /.row -->
+</div>
+</div>
+</main>
+<div class="text_height_40"></div>
+<%@ include file="../include/footer.jsp" %>
 </body>
 </html>
