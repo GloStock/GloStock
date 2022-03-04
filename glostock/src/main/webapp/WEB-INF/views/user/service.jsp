@@ -161,7 +161,7 @@
       <b>☞</b>아래의 계산기로 예상 배정주 확인이 가능합니다 (비례배정만 지원) <br><br>
       <b>☞</b>공모가 대비 입금금액,증거금,경쟁률에 따라 차이가 배정주식 수에 차이가 발생하며, <br>
       증권사의 배정정책에 따라 계산이 상이할 수 있습니다. <br><br>
-      <p><a href="http://www.38.co.kr/html/fund/?o=k"><b>☞</b>공모주 청약일정 확인하기</a> </p>
+      <p><a href="http://www.38.co.kr/html/fund/?o=k"><b>☞</b>공모주 청약일정 확인하기</a></p>
       
       </h6>
       
@@ -170,44 +170,67 @@
       	
       	<tr>
       	<td><b>입금금액(원):</b> </td>
-      	<td><input type="text" id="deposit" value=""> </td>   
+      	<td><input type="text" id='deposit' name='deposit' onkeyup='ipo()'> </td>   
       	</tr>
       	
       	<tr>
       	<td><b>증거금비율(%):</b></td>
-      	<td><input type="text" id="initialmargin" value=""> </td>   
+      	<td><input type="text" id='initialmargin' name='initialmargin' onkeyup='ipo()'> </td>   
       	</tr>
       	
       	<tr>
       	<td><b>공모가(원):</b></td>
-      	<td> <input type="text" id="ipoprice" value=""> </td>   
+      	<td> <input type="text" id='ipoprice' name='ipoprice' onkeyup='ipo()'> </td>   
       	</tr>
       	
       	<tr>
       	<td><b>경쟁률:</b></td>
-      	<td><input type="text" id= "comprate" value="">&nbsp;:1 </td>   
+      	<td><input type="text" id='comprate' name='comprate' onkeyup='ipo()'>&nbsp; :1 </td>   
       	</tr>
-  	
+      	
+      	     <input type="text" id='result' name='result'> 
      </table>
      <br>
-     <input type="submit" onclick='ipo()'> &nbsp;
+     <input type="text" id='result' name='result'> 
+     <br><br>
+     <input type="submit" id="ipo" onclick="ipo()" value="계산"> &nbsp;  
      <button type="reset">다시입력</button> 
+    
       </form> 
+
+
+      
+  <br><br>    
+  	
+  	
+  
+  
+  
       </div>
     </div>
   </div>
   
+  <script type="javascript">
+  function ipo()
+  {
+   if(document.getElementById("ipoprice").value && document.getElementById("comprate").value){
+    document.getElementById('result').value =parseInt(document.getElementById('ipoprice').value) + parseInt(document.getElementById('comprate').value);
+   }
+  }
+  
+  
+  </script>
   
   
   
   
-  
+ 
   
   
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+    <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>공모주청약 계산기(비례배정)</b></h5>
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
