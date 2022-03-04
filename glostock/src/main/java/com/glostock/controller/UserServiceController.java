@@ -42,4 +42,10 @@ public class UserServiceController {
 	public String service() {
 		return "user/service";
 	}
+
+	@RequestMapping("/crypto")
+	public String crypto() {
+		return "user/crypto";
+	}
+
 }
