@@ -49,5 +49,11 @@ public class UserServiceController {
 		return "user/mypage";
 	}
 	
+	@RequestMapping("/calculator") 
+	public String calculator() {  
+		return "user/calculator"; 
+		
+	} 
+	
 
 }
