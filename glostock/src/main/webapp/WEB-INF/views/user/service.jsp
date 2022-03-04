@@ -138,153 +138,111 @@
     <div class="row g-5">
         <div class="col-md-8">
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                My Service
+                <b>Glo 툴즈</b>
             </h3>
 
-            <article class="blog-post">
-                <h2 class="blog-post-title">계산기 1</h2>
-                <p class="blog-post-meta">Feburary 25, 2022 by <a href="#">Testuser1</a></p>
-                <p class="blog-post-meta">Source: <a href="">Glo Stock User</a> </p>
-                <p class="blog-post-meta">Tag: <a href="">$TSLA</a></p>
+         
 
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ul>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-            </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title">Test Glo Stock Post 2</h2>
-                <p class="blog-post-meta">Feburary 25, 2022 by <a href="#">Testuser2</a></p>
-                <p class="blog-post-meta">Source: <a href="">Twitter</a> </p>
-                <p class="blog-post-meta">Tag: <a href="">$TSLA</a></p>
-
-                <blockquote class="twitter-tweet"><p lang="und" dir="ltr"><a href="https://t.co/OrLV2c3qy2">pic.twitter.com/OrLV2c3qy2</a></p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1496252264171941888?ref_src=twsrc%5Etfw">February 22, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-            </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title">Sample blog post</h2>
-                <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
-
-                <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
-                <hr>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h2>Blockquotes</h2>
-                <p>This is an example blockquote in action:</p>
-                <blockquote class="blockquote">
-                    <p>Quoted text goes here.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Example lists</h3>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ul>
-                <p>And this is an ordered list:</p>
-                <ol>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ol>
-                <p>And this is a definition list:</p>
-                <dl>
-                    <dt>HyperText Markup Language (HTML)</dt>
-                    <dd>The language used to describe and define the content of a Web page</dd>
-                    <dt>Cascading Style Sheets (CSS)</dt>
-                    <dd>Used to describe the appearance of Web content</dd>
-                    <dt>JavaScript (JS)</dt>
-                    <dd>The programming language used to build advanced Web sites and applications</dd>
-                </dl>
-                <h2>Inline HTML elements</h2>
-                <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-                <ul>
-                    <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-                    <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-                    <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-                    <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-                    <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-                    <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-                </ul>
-                <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-                <h2>Heading</h2>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Sub-heading</h3>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <pre><code>Example code block</code></pre>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-            </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title">Another blog post</h2>
-                <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
-
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <blockquote>
-                    <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Example table</h3>
-                <p>And don't forget about tables in these posts:</p>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Upvotes</th>
-                        <th>Downvotes</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Alice</td>
-                        <td>10</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>4</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Charlie</td>
-                        <td>7</td>
-                        <td>9</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td>Totals</td>
-                        <td>21</td>
-                        <td>23</td>
-                    </tr>
-                    </tfoot>
-                </table>
-
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-            </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title">New feature</h2>
-                <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ul>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-            </article>
-
-            <nav class="blog-pagination" aria-label="Pagination">
-                <a class="btn btn-outline-primary" href="#">위로</a>
-                <a class="btn btn-outline-secondary">더보기</a>
-            </nav>
+       
+       
+ <div class="accordion" id="accordionExample">
+ 
+ 
+  <div class="accordion-item">
+    <h4 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>공모주청약 계산기(비례배정)</b></h5>
+      </button>
+    </h4>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      
+      <h6>
+      <b>☞</b>아래의 계산기로 예상 배정주 확인이 가능합니다 (비례배정만 지원) <br><br>
+      <b>☞</b>공모가 대비 입금금액,증거금,경쟁률에 따라 차이가 배정주식 수에 차이가 발생하며, <br>
+      증권사의 배정정책에 따라 계산이 상이할 수 있습니다. <br><br>
+      <p><a href="http://www.38.co.kr/html/fund/?o=k"><b>☞</b>공모주 청약일정 확인하기</a> </p>
+      
+      </h6>
+      
+      <form> 
+      	<table> 
+      	
+      	<tr>
+      	<td><b>입금금액(원):</b> </td>
+      	<td><input type="text" id="deposit" value=""> </td>   
+      	</tr>
+      	
+      	<tr>
+      	<td><b>증거금비율(%):</b></td>
+      	<td><input type="text" id="initialmargin" value=""> </td>   
+      	</tr>
+      	
+      	<tr>
+      	<td><b>공모가(원):</b></td>
+      	<td> <input type="text" id="ipoprice" value=""> </td>   
+      	</tr>
+      	
+      	<tr>
+      	<td><b>경쟁률:</b></td>
+      	<td><input type="text" id= "comprate" value="">&nbsp;:1 </td>   
+      	</tr>
+  	
+     </table>
+     <br>
+     <input type="submit" onclick='ipo()'> &nbsp;
+     <button type="reset">다시입력</button> 
+      </form> 
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
 
         </div>
 
