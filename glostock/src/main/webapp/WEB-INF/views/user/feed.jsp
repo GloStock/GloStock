@@ -1,11 +1,28 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="yahoofinance.YahooFinance"%>
 <%@page import="yahoofinance.Stock"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+  Stock TSLA = YahooFinance.get("TSLA");
+  Stock AAPL = YahooFinance.get("AAPL");
+  Stock MSFT = YahooFinance.get("MSFT");
+  Stock AMZN = YahooFinance.get("AMZN");
+  Stock FB = YahooFinance.get("FB");
+  Stock ADS = YahooFinance.get("ADS.DE");
+
+  ArrayList<Stock> stockFollowList = new ArrayList<>();
+  stockFollowList.add(TSLA);
+  stockFollowList.add(AAPL);
+  stockFollowList.add(MSFT);
+  stockFollowList.add(AMZN);
+  stockFollowList.add(FB);
+  stockFollowList.add(ADS);
+%>
+
 <!doctype html>
-
-
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -55,8 +72,20 @@
 
     .card {
       margin-bottom: 5px;
+      flex-direction: row !important;
     }
 
+    .card-header {
+      margin: auto !important;
+      background-color: white !important;
+      border: 0 !important;
+      width: 40% !important;
+      text-align: center;
+    }
+
+    .card-body {
+      text-align: center;
+    }
 
   </style>
 
@@ -312,80 +341,50 @@
 <%--          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>--%>
 <%--        </div>--%>
 
-
-
-
-
-<%
-Stock TSLA = YahooFinance.get("TSLA"); //티커심볼가져오기
-BigDecimal price =  TSLA.getQuote().getPrice();//현재가
-BigDecimal PrevClose =  TSLA.getQuote().getPreviousClose();//전일종가
-BigDecimal ChangeInPercent =  TSLA.getQuote().getChangeInPercent();//일봉퍼센티지
-BigDecimal ChangeInPrice= price.subtract(PrevClose);
-int compareResult = price.compareTo(PrevClose);
-%>
-
-
         <div class="p-4">
           <h4>My Following</h4>
           <ol class="list-unstyled mb-0">
-  
-            <li>
-              <div class="card">
-              
-                <div class="card-body">
-                  <p class="card-text" style="font-size:28px;"> <a href="/company/show?ticker=AAPL"><b>테슬라</b></a></p>
-                  <div align="right">
-                  <p class="card-text" style="font-size:28px;"><b><%=price%></b></p>
-                  <% 
-                  if(compareResult>0) { %>
-                  <p class="card-text" style="font-size:17px; color:red;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b></p>
-                  <% } else if (compareResult<0) {%> 
-                  <p class="card-text" style="font-size:17px; color:blue;"><b><%=ChangeInPrice%>(<%=ChangeInPercent%>%)</b><
-                  <%} %>  
+              <%
+                  for (Stock s : stockFollowList) {
+                    String currency = "";
+                    if (s.getCurrency().equals("USD")) {
+                      currency = "$";
+                    } else if (s.getCurrency().equals("EUR")) {
+                      currency = "€";
+                    } else if (s.getCurrency().equals("GBP")) {
+                      currency = "£";
+                    }
+              %>
+                <li>
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title"><a href="/company/show?ticker=AAPL"><%=currency%><%=s.getSymbol()%></a></h5>
+                      <p class="card-text"><%=s.getName()%></p>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-top">
+                        <%
+                          if(s.getQuote().getPrice().compareTo(s.getQuote().getPreviousClose()) > 0) {
+                        %>
+                        <p class="card-text" style="font-size:17px; color:red;"><b><%=currency%><%=s.getQuote().getPrice().subtract(s.getQuote().getPreviousClose())%> (<%=s.getQuote().getChangeInPercent()%>%)</b></p>
+                        <%
+                        } else if (s.getQuote().getPrice().compareTo(s.getQuote().getPreviousClose()) < 0) {
+                        %>
+                        <p class="card-text" style="font-size:17px; color:blue;"><b>-<%=currency%><%=s.getQuote().getPrice().subtract(s.getQuote().getPreviousClose()).abs()%> (<%=s.getQuote().getChangeInPercent()%>%)</b></p>
+                        <%
+                          }
+                        %>
+                      </div>
+                      <div class="card-bottom">
+                        <p class="card-text"><b><%=currency%><%=s.getQuote().getPrice()%></b></p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="/company/show?ticker=AAPL">$AAPL</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                </div>
-              </div>
-            </li>
-            
-            
-            <li>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="/company/show?ticker=MSFT">$MSFT</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </li>
-            
-            
-            <li>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="/company/show?ticker=AMZN">$AMZN</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="/company/show?ticker=FB">$FB</a></h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
+                </li>
+              <%
+                }
+              %>
+                <p>출처: <a href="https://finance.yahoo.com/">Yahoo Finance</a></p>
 
         <div class="p-4">
           <h4 class="fst-italic">My Service</h4>
