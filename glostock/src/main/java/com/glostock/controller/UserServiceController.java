@@ -43,11 +43,16 @@ public class UserServiceController {
 		return "user/service";
 	}
 
+	@RequestMapping("/crypto")
+	public String crypto() {
+		return "user/crypto";
+	}
 	
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "user/mypage";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("/calculator") 
 	public String calculator() {  
@@ -55,5 +60,7 @@ public class UserServiceController {
 		
 	} 
 	
+=======
+>>>>>>> 791a1d9bfd56e413aa20a34eaac05fb9901b672b
 
 }
