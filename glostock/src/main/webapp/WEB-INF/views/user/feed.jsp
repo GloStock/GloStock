@@ -130,7 +130,7 @@
     </div>
   </nav>
   </div>
-  </header>
+</header>
 
   
 
@@ -397,7 +397,7 @@
       </div>
     </div>
   </div>
-
+  </div>
 </main>
 <%@ include file="../include/footer.jsp" %>
 
