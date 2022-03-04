@@ -96,7 +96,7 @@ border: 0 none;
     <h2 class="pb-2 fst-italic border-bottom">Hot FAQs</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="feature col">
-        <div class="wbus88"><img src="/resources/img/favicon.png"></div>
+        <div class="wbus88"><img src="/resources/img/favicon.png" class="rounded-circle"></div>
         <h2>About Us</h2>
         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
         <a href="#" class="icon-link">
