@@ -47,5 +47,10 @@ public class UserServiceController {
 	public String crypto() {
 		return "user/crypto";
 	}
+	
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "user/mypage";
+	}
 
 }
