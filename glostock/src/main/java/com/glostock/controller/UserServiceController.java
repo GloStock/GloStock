@@ -42,13 +42,12 @@ public class UserServiceController {
 	public String service() {
 		return "user/service";
 	}
-<<<<<<< HEAD
+
 	
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "user/mypage";
 	}
 	
-=======
->>>>>>> cb6f517f56d3f5ce13d40e5e94482f55c7c6e522
+
 }

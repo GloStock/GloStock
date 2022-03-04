@@ -6,135 +6,135 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #54E6DE, pink) !important;
+        }
+        
+        
+    </style>
 <body>
 
  <%@ include file="../include/header.jsp" %>
+ <br><br> 
 
-<div class="main-wrapper">
-        <div class="app">
-            <!--HEADER-->
-            <header class="header">
-                <div class="header-block header-block-search">
-                    12:12:12
-                </div>
-                <div class="header-block header-block-nav">
-                    <ul class="nav-profile">
-                        <li class="profile dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button">
-                                <span class="name">
-                                    Здравствуйте, Ирина
-                                </span>
-                            </a>
-                            <div class="dropdown-menu profile-dropdown-menu">
-                                <a class="dropdown-item" href="#"> <i class="fa fa-gear icon"></i>Сделать запись</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off icon"></i>Выйти</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-            <!--HEADER-->
-            <!--SIDEBAR-->
-            <aside class="sidebar">
-                <div class="sidebar-container">
-                    <div class="sidebar-header">
-                        <div class="brand">
-                            <div class="logo">
-                                <span class="l l1"></span>
-                                <span class="l l2"></span>
-                                <span class="l l3"></span>
-                                <span class="l l4"></span>
-                                <span class="l l5"></span>
-                            </div>
-                            Бухгалтерия
-                        </div>
-                    </div>
-                    <nav class="menu">
-                        <ul class="nav metismenu">
-                            <li class="active">
-                                <a href="#"> <i class="fa fa-building-o"></i> Счет </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-flash"></i> История </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-archive"></i> Планирование </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-plus-square"></i> Запись </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-            <!--SIDEBAR-->
-            <!--CONTENT-->
-            <article class="content dashboard-page">
-                <div class="title-block">
-                    <h3 class="title pull-left">
-                        글로스탁 <span class="sparkline bar"></span>
-                    </h3>
-                </div>
-                <section class="section">
-                    <div class="row">
-                        <div class="col col-xs-12 col-sm-12 col-md-6 col-xl-6 history-col">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="title-block" style="border-bottom: 1px solid green">
-                                        <h4 class="title">Загальні відомості</h4>
-                                    </div>
-                                    <p>
-                                        <span style="font-weight:600;">Ім'я: </span>Піддубняк Андрій
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;">Логін:  </span>apoddubnjak4@gmail.com
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;">Пароль: </span>password
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;">Посада: </span>посада
-                                    </p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-xs-12 col-sm-12 col-md-6 col-xl-6 history-col">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="title-block" style="border-bottom: 1px solid green">
-                                        <h4 class="title">Редагувати дані</h4>
-                                    </div>
-                                    <p>
-                                        <span style="font-weight:600;margin-right:35px;">Ім'я: </span>
-                                        <input type="text" value="Піддубняк Андрій">
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;margin-right:22px;">Логін:  </span>
-                                        <input type="text" value="apoddubnjak4@gmail.com">
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;margin-right:5px;">Пароль: </span>
-                                        <input type="text" value="password">
-                                    </p>
-                                    <p>
-                                        <span style="font-weight:600;margin-right:7px;">Посада: </span>
-                                        <input type="text" value="посада">
-                                    </p>
-                                    <a href="#" class="btn btn-primary-outline">Редагувати</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-            <!--CONTENT-->
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<br><br>
+
+<style> 
+.wrap {
+width: 1300px;
+margin:0 auto;
+}
+</style>
+<div class="wrap">
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="/resources/img/Glostockblack.png" class="img-circle">
         </div>
-    </div>
+        
+        <div class="span8">
+            <h3><b>더좋은</b></h3>
+            <br><br> 
+            <h6>이메일: MyEmail@servidor.com</h6>
+            <h6>별명: 참좋은</h6>
+        </div>
+        
+      
+</div>
+</div>
+ </div>
 
 
+     
 
+<div class="container">
+<br>  <p><h2><b>마이페이지</b></h2></p>
+<hr>
+<aside class="col-sm-4">
+<div class="card">
+	<article class="card-group-item">
+		<header class="card-header"><h6 class="title"><b>회원정보</b> </h6></header>
+		<div class="filter-content">
+			<div class="list-group list-group-flush">
+			  <a href="#" class="list-group-item">내 정보 </a>
+			  <a href="#" class="list-group-item">내 정보수정</a>
+			  <a href="#" class="list-group-item">로그아웃</a>
+			  <a href="#" class="list-group-item">회원탈퇴</a>
+			</div> 
+		</div>
+	</article> 
+</div> 
+	</aside> 
+	
+	<aside class="col-sm-4">
+<div class="card">
+	<article class="card-group-item">
+		<header class="card-header"><h6 class="title"><b>게시글 관리</b> </h6></header>
+		<div class="filter-content">
+			<div class="list-group list-group-flush">
+			  <a href="#" class="list-group-item">내 게시글 보기 </a>
+			  <a href="#" class="list-group-item">게시글 수정</a>
+			</div> 
+		</div>
+		</article> 
+		
+		<article class="card-group-item">
+		<header class="card-header"><h6 class="title"><b>나의 자산</b> </h6></header>
+		<div class="filter-content">
+			<div class="list-group list-group-flush">
+			  <a href="#" class="list-group-item">관심종목 수정</a>
+			
+			</div> 
+		</div>
+		</article> 
+		
+	
+</div> 
+	</aside> <!-- col.// -->
+	
+	
+	
+	<aside class="col-sm-4">
+<div class="card">
+	<article class="card-group-item">
+		<header class="card-header"><h6 class="title"><b>고객센터</b> </h6></header>
+		<div class="filter-content">
+			<div class="list-group list-group-flush">
+			  <a href="#" class="list-group-item">FAQ</a>
+			  <a href="#" class="list-group-item">문의사항</a>
+			  <a href="#" class="list-group-item">고객센터</a>
+			</div> 
+		</div>
+	</article> 
+</div> 
+	</aside> 
+</div> <!-- row.// -->
+
+</div> 
+<!--container end.//-->
+
+<br>
+<br>
 
  <%@ include file="../include/footer.jsp" %>
 </body>
