@@ -47,7 +47,9 @@
             border: 0 !important;
             background-color: white !important;
         }
-        
+        body {
+      background: linear-gradient(to bottom right, #54E6DE, pink);
+	}
     </style>
 
 
@@ -99,7 +101,7 @@
         </div>
     </section>
 	<div class="container">
-	<table class="table">
+	<table class="table border border-light border-3">
   <thead class="table-success">
     <tr>
       <th scope="col">No.</th>
@@ -116,7 +118,7 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th style="text-align:right;" scope="row">1</th>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
@@ -130,7 +132,7 @@
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th style="text-align:right;" scope="row">2</th>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
@@ -144,7 +146,7 @@
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th style="text-align:right;" scope="row">3</th>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
