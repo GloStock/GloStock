@@ -11,9 +11,9 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TranslateText {
+public class PapagoAPIService {
 
-    public String translateENtoKR(String en_text) {
+    public static String translateENtoKR(String en_text) {
         String result = "";
         String clientId = "ySWuetf8Wx39GvAyyVzX";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "IHgMsaP9TM";//애플리케이션 클라이언트 시크릿값";
