@@ -104,7 +104,14 @@
         </div>
     </section>
     <section class="margin_height"></section>
+    
 	<div class="container">
+	<form action="#" method="post">
+	<h6>Portfolio&nbsp;&nbsp;
+		<select class="btn btn-outline-dark btn-sm">
+			<option selected>Create New portfolio</option>
+		</select>
+	</h6>
 	<table class="table border border-light border-3">
   <thead class="table-success">
     <tr>
@@ -112,12 +119,12 @@
       <th scope="col">Ticker</th>
       <th scope="col">Transaction</th>
       <th scope="col">Date</th>
+      <th scope="col">Shares</th>
       <th scope="col">Price</th>
       <th scope="col" style="text-align:right;">Portfolio Name</th>
-      <th style="text-align:center;"><form class="d-flex">
-        <input class="rounded border-0" type="search" size="15" placeholder="Search" aria-label="Search">&nbsp;&nbsp;
-        <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
-      </form></th>
+      <th style="text-align:left;">
+        <input class="rounded border-0" type="text" size="15">
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -131,6 +138,7 @@
 		  </select>
 	  </td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
       <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
@@ -145,6 +153,7 @@
 		  </select>
 	  </td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
       <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
@@ -159,22 +168,28 @@
 		  </select>
 	  </td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
       <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
       <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
     </tr>
   </tbody>
+  <tfoot>
+  <tr>
+  <td></td>
+  <td colspan="7">
+  <input type="button" value="Save Changes" class="btn btn-outline-dark btn-sm" onclick="location.href='portfolio_result'">&nbsp;&nbsp;
+  <input type="button" value="Cancel" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Undo" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Clear" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Add More Rows" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Recalculate equally Weighted $100K portfolio" class="btn btn-outline-dark btn-sm">
+  </td>
+  </tr>
+  </tfoot>
 </table>
+</form>
 	</div>
-	<br>
-    <section class="py-3 rounded text-center container"  style="background-color: #fff;">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Today's Price</h1>
-                <p class="lead text-muted">현재가격!</p>
-            </div>
-        </div>
-    </section>
 <section class="margin_height"></section>
 </main>
 
