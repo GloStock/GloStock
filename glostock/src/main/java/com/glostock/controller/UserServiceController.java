@@ -1,12 +1,21 @@
 package com.glostock.controller;
 
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.glostock.command.CalVO;
+
 
 @Controller
 @RequestMapping("/user/*")
 public class UserServiceController {
 
+
+	
 	//로그인페이지
 	@RequestMapping("/login")
 	public String login() { 
@@ -38,11 +47,48 @@ public class UserServiceController {
 		return "user/portfolio";
 	}
 	
-	@RequestMapping("/service")
+	@RequestMapping("/service") //계산기 유저서비스 화면
 	public String service() {
-		return "user/service";
+		return "user/service";	
 	}
 
+	@RequestMapping("ipoForm") //공모주계산기
+	public String ipoForm(Model model, CalVO vo) {  
+		
+		
+		model.addAttribute("ipoForm", vo);
+		
+		return "user/service";
+		
+	} 
+	
+	@RequestMapping("divForm") //배당률계산기
+	public String divForm(Model model, CalVO vo) {  
+	
+		
+		model.addAttribute("divForm", vo);
+		
+		return "user/service";
+		
+	} 
+	
+	@RequestMapping("compoundForm") //복리수익률계산기
+	public String compoundForm(Model model, CalVO vo) {  
+		
+		
+		model.addAttribute("compoindForm", vo);
+		
+		return "user/service";
+		
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping("/crypto")
 	public String crypto() {
 		return "user/crypto";
@@ -54,11 +100,12 @@ public class UserServiceController {
 	}
 
 	
-	@RequestMapping("/calculator") 
-	public String calculator() {  
-		return "user/calculator"; 
-		
-	} 
+	
+	
+	
+	
+	
+	
 	
 
 
