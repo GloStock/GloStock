@@ -95,7 +95,7 @@
 <br>
 <main>
 
-    <section class="py-4 text-center container" style="background-color: #fff;">
+    <section class="py-4 text-center container rounded" style="background-color: #fff;">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">My Portfolio</h1>
@@ -167,7 +167,7 @@
 </table>
 	</div>
 	<br>
-    <section class="py-3 text-center container"  style="background-color: #fff;">
+    <section class="py-3 rounded text-center container"  style="background-color: #fff;">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Today's Price</h1>
