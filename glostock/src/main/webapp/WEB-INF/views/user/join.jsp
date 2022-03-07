@@ -47,7 +47,7 @@
   <main class="form-join">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
-       <div align="center"> <h2 class="mb-3"><b>회원가입</b></h4></div>
+       <div align="center"> <h4 class="mb-3"><b>회원가입</b></h4></div>
        <br> 
        <br> 
         <form class="validation-form" novalidate>

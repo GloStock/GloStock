@@ -96,16 +96,19 @@
                             <a class="nav-link" href="/user/feed">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/user/follow">My Following</a>
+                            <a class="nav-link" href="/user/follow">My Following</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/service">My Service</a>
+                            <a class="nav-link active" aria-current="page" href="/user/crypto">Cryptocurrency</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/crypto">Cryptocurrency</a>
+                            <a class="nav-link" href="/user/service">My Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/portfolio">My Portfolio</a>
                         </li>
                     </ul>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="/user/mypage">My Account</a>
                 </div>
             </div>
         </nav>
