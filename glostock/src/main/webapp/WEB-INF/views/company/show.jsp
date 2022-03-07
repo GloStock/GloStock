@@ -4,96 +4,25 @@
 <%@ page import="java.io.BufferedReader" %>
 <%@ page import="java.io.InputStreamReader" %>
 <%@ page import="org.json.JSONObject" %>
-<%@ page import="com.glostock.apiservice.TranslateText" %>
+<%@ page import="com.glostock.apiservice.PapagoAPIService" %>
 <%@ page import="org.json.JSONArray" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.glostock.apiservice.PolygonAPIService" %>
+<%@ page import="com.glostock.model.CompanyVO" %>
+<%@ page import="com.glostock.model.NewsVO" %>
+<%@ page import="java.time.Instant" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
     String input_ticker = request.getParameter("ticker");
 
-    String company_ticker = "";
-    String company_description = "";
-    String company_url = "";
-    String company_logo_url = "";
-    String company_name = "";
-    String company_description_ko = "";
-
-    ArrayList<JSONObject> threeRecentNews = new ArrayList<>();
-
-    final String USER_AGENT = "Mozilla/5.0";
-    String COMPANY_PROFILE_URL = "https://api.polygon.io/v3/reference/tickers/" + input_ticker + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY";
-    String NEWSAPI_URL = "https://api.polygon.io/v2/reference/news?ticker=" + input_ticker + "&apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY";
-
-
-    URL profile_obj = new URL(COMPANY_PROFILE_URL);
-    URL news_obj = new URL(NEWSAPI_URL);
-
-    HttpURLConnection profileURLConnection = (HttpURLConnection) profile_obj.openConnection();
-    profileURLConnection.setRequestMethod("GET");
-    profileURLConnection.setRequestProperty("User-Agent", USER_AGENT);
-    HttpURLConnection newsURLConnection2 = (HttpURLConnection) news_obj.openConnection();
-    newsURLConnection2.setRequestMethod("GET");
-    newsURLConnection2.setRequestProperty("User-Agent", USER_AGENT);
-
-    int responseCode = profileURLConnection.getResponseCode();
-    if (responseCode == HttpURLConnection.HTTP_OK) { // success
-        BufferedReader in = new BufferedReader(new InputStreamReader(profileURLConnection.getInputStream()));
-        String inputLine;
-        StringBuffer polygonresponse = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            polygonresponse.append(inputLine);
-        }
-        in .close();
-
-        JSONObject jObject = new JSONObject(polygonresponse.toString());
-
-        JSONObject post1Object = jObject.getJSONObject("results");
-        company_ticker = post1Object.getString("ticker");
-        company_description = post1Object.getString("description");
-        company_url = post1Object.getString("homepage_url");
-        JSONObject brandingObject = post1Object.getJSONObject("branding");
-        company_logo_url = brandingObject.getString("logo_url");
-        company_name = post1Object.getString("name");
-
-    } else {
-        System.out.println("GET request not worked");
-    }
-
-    int responseCode2 = newsURLConnection2.getResponseCode();
-    if (responseCode2 == newsURLConnection2.HTTP_OK) { // success
-        BufferedReader in = new BufferedReader(new InputStreamReader(newsURLConnection2.getInputStream()));
-        String inputLine;
-        StringBuffer newsresponse = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            newsresponse.append(inputLine);
-        }
-        in .close();
-
-        JSONObject jObject = new JSONObject(newsresponse.toString());
-
-        JSONArray newsArray = jObject.getJSONArray("results");
-        threeRecentNews = new ArrayList<>();
-
-        for (int i = 0; i < 3; i++) {
-            threeRecentNews.add(newsArray.getJSONObject(i));
-        }
-
-    } else {
-        System.out.println("GET request not worked");
-    }
-
-    TranslateText translateText = new TranslateText();
-
-    try {
-        company_description_ko = translateText.translateENtoKR(company_description);
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-
+    CompanyVO vo = PolygonAPIService.getCompanyProfile(input_ticker);
+    ArrayList<NewsVO> list = PolygonAPIService.getThreeNews(input_ticker);
 %>
 
 <!doctype html>
@@ -102,9 +31,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title><%=company_ticker%> Profile | Glo Stock</title>
+    <title>$<%=vo.getCompany_ticker()%> Profile | Glo Stock</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -200,23 +127,23 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="mx-auto">
-                <img src="<%=company_logo_url + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo" style="background-color: white;"/>
-                <h1 class="fw-light">$<%=company_ticker%> · <%=company_name%></h1>
+                <img src="<%=vo.getCompany_logo_url() + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%>" height="75px" id="company_logo" style="background-color: white;"/>
+                <h1 class="fw-light">$<%=vo.getCompany_ticker()%> · <%=vo.getCompany_name()%></h1>
                 <p class="lead text-muted">
                     <%
-                        if (company_description_ko == "") {
+                        if (vo.getCompany_description_ko() == "") {
                             %>
-                                <%=company_description%>
+                                <%=vo.getCompany_description()%>
                             <%
                         } else {
                             %>
-                                <%=company_description_ko%>
+                                <%=vo.getCompany_description_ko()%>
                             <%
                         }
                     %>
                 </p>
                 <%
-                    if (company_description_ko == "") {
+                    if (vo.getCompany_description_ko() == "") {
                 %>
                 <p style="color: grey"><i>출처: <a href="https://polygon.io/">polygon.io</a></i></p>
                 <%
@@ -227,8 +154,8 @@
                     }
                 %>
                 <p>
-                    <a href="<%=company_url%>" class="btn btn-primary my-2">회사 홈페이지로</a>
-                    <a href="<%="https://finance.yahoo.com/quote/" + company_ticker%>" class="btn btn-secondary my-2">야후 파이낸스로</a>
+                    <a href="<%=vo.getCompany_website_url()%>" class="btn btn-primary my-2">회사 홈페이지로</a>
+                    <a href="<%="https://finance.yahoo.com/quote/" + vo.getCompany_ticker()%>" class="btn btn-secondary my-2">야후 파이낸스로</a>
                 </p>
             </div>
         </div>
@@ -241,18 +168,20 @@
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                <c:forEach items="<%=threeRecentNews%>" var="recentNews">
+                <c:forEach items="<%=list%>" var="recentNews">
                     <div class="col">
                         <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" ><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">${recentNews.getJSONObject("publisher").getString("name")}</text></svg>
+<%--                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" ><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">${recentNews.publisher_name}</text></svg>--%>
+                            <a href="${recentNews.article_url}"><img src="${recentNews.article_image_url}" alt="News Image" width="100%" height="225"></a>
 
                             <div class="card-body">
-                                <p class="card-text">${recentNews.getString("title")}</p>
+                                <p class="card-text"><a href="${recentNews.article_url}">${recentNews.article_title}</a></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="location.href='${recentNews.getString("article_url")}'">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">번역</button>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted" style="font-size: 0.5rem">By ${recentNews.article_author}</small>
+                                    <img src="${recentNews.publisher_logo_url}" height="10px">
                                 </div>
                             </div>
                         </div>
