@@ -50,6 +50,9 @@
         body {
       background: linear-gradient(to bottom right, #54E6DE, pink);
 	}
+		.margin_height{
+			height:30px;
+		}
     </style>
 
 
@@ -89,10 +92,10 @@
         </nav>
     </div>
 </header>
-
+<br>
 <main>
 
-    <section class="py-5 text-center container">
+    <section class="py-4 text-center container" style="background-color: #fff;">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">My Portfolio</h1>
@@ -100,6 +103,7 @@
             </div>
         </div>
     </section>
+    <section class="margin_height"></section>
 	<div class="container">
 	<table class="table border border-light border-3">
   <thead class="table-success">
@@ -162,7 +166,8 @@
   </tbody>
 </table>
 	</div>
-    <section class="py-5 text-center container">
+	<br>
+    <section class="py-3 text-center container"  style="background-color: #fff;">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Today's Price</h1>
@@ -170,7 +175,7 @@
             </div>
         </div>
     </section>
-
+<section class="margin_height"></section>
 </main>
 
 <%@include file="../include/footer.jsp"%>
