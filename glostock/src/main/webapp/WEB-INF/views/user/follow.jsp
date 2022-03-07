@@ -1,4 +1,13 @@
+<%@ page import="com.glostock.model.StockVO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.glostock.apiservice.PolygonAPIService" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    ArrayList<StockVO> discoverList = PolygonAPIService.get
+%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -66,19 +75,23 @@
                             <a class="nav-link" href="/user/feed">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/feed">My Feed</a>
+                            <a class="nav-link" href="/user/feed">Feed</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/user/follow">My Following</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/service">My Service</a>
+                            <a class="nav-link" href="/user/crypto">Cryptocurrency</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/service">My Tools</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/user/portfolio">My Portfolio</a>
                         </li>
+
                     </ul>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="/user/mypage">My Account</a>
                 </div>
             </div>
         </nav>
@@ -152,6 +165,20 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row row-cols-1">
+
+                <c:forEach items="${discoverList}" var="discoverItem">
+                    <div class="card follow-card">
+                        <div class="card-header">
+                            <h5 class="card-title">${}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                    </div>
+                </c:forEach>
 
                 <div class="card" style="margin-bottom: 10px;">
                     <div class="card-body">

@@ -107,22 +107,25 @@
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/feed">My Feed</a>
+            <a class="nav-link active" aria-current="page" href="/user/feed">Feed</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/user/follow">My Following</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/service">My Service</a>
+            <a class="nav-link" href="/user/crypto">Cryptocurrency</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/service">My Tools</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/user/portfolio">My Portfolio</a>
           </li>
         </ul>
-         &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
+         &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-sm btn-outline-secondary" href="/user/mypage">My Account</a>
       </div>
     </div>
   </nav>
