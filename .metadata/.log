@@ -5977,3 +5977,39 @@ Binding(CTRL+SHIFT+C,
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 11:35:49.225
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 12:26:45.438
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 12:26:45.440
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:05.426
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:05.430
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:23.643
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:23.645
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:42.247
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-08 14:39:42.249
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-08 14:59:20.206
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.wvxgyikR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-08 14:59:20.207
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.wvxgyikR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-08 14:59:20.208
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-08 14:59:20.208
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.wvxgyikR => OK

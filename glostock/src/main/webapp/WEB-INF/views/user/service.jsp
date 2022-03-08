@@ -154,7 +154,7 @@
  <div class="accordion" id="accordionExample">
  
  
-  <div class="accordion-item">
+  <div class="accordion-item" id="first">
     <h4 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
         <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>공모주청약 계산기(비례배정)</b></h5>
@@ -250,7 +250,7 @@
   </div>
 
 
-  <div class="accordion-item">
+  <div class="accordion-item"  id="second">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
    <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>배당수익률 계산기</b></h5>
@@ -370,7 +370,7 @@
   
   
   
-  <div class="accordion-item">
+  <div class="accordion-item"  id="third">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
       <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>복리계산기</b></h5>
