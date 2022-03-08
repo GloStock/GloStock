@@ -74,22 +74,19 @@
                             <a class="nav-link" href="/user/feed">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/feed">Feed</a>
+                            <a class="nav-link" href="/user/feed">My Feed</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/user/follow">My Following</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/crypto">Cryptocurrency</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/user/service">My Tools</a>
+                            <a class="nav-link" href="/user/service">My Service</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/user/portfolio">My Portfolio</a>
                         </li>
                     </ul>
-                    <a class="btn btn-sm btn-outline-secondary" href="/user/mypage">My Account</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
                 </div>
             </div>
         </nav>
@@ -113,6 +110,9 @@
 	<h6>Portfolio&nbsp;&nbsp;
 		<select class="btn btn-outline-dark btn-sm">
 			<option selected>Create New portfolio</option>
+			<option value="1">test1</option>
+			<option value="2">test2</option>
+			<option value="3">test3</option>
 		</select>
 	</h6>
 	<table class="table border border-light border-3">
@@ -130,9 +130,9 @@
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="tbody">
     <tr>
-      <th style="text-align:right;" scope="row">1</th>
+      <td style="text-align:center;" scope="row"><strong>1</strong></td>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
@@ -147,7 +147,7 @@
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
     </tr>
     <tr>
-      <th style="text-align:right;" scope="row">2</th>
+      <td style="text-align:center;" scope="row"><strong>2</strong></td>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
@@ -162,7 +162,7 @@
       <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
     </tr>
     <tr>
-      <th style="text-align:right;" scope="row">3</th>
+      <td style="text-align:center;" scope="row"><strong>3</strong></td>
       <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
       <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
 			<option selected>Buy</option>
@@ -180,12 +180,12 @@
   <tfoot>
   <tr>
   <td></td>
-  <td colspan="7">
+  <td colspan="7" style="text-align: center;">
   <input type="button" value="Save Changes" class="btn btn-outline-dark btn-sm" onclick="location.href='portfolio_result'">&nbsp;&nbsp;
-  <input type="button" value="Cancel" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Cancel" class="btn btn-outline-dark btn-sm" onclick="location.href='feed'">&nbsp;&nbsp;
   <input type="button" value="Undo" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
-  <input type="button" value="Clear" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
-  <input type="button" value="Add More Rows" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
+  <input type="button" value="Clear" class="btn btn-outline-dark btn-sm" onclick="location.href='portfolio'">&nbsp;&nbsp;
+  <input type="button" value="Add More Rows" class="btn btn-outline-dark btn-sm" onclick="ADDRow();">&nbsp;&nbsp;
   <input type="button" value="Recalculate equally Weighted $100K portfolio" class="btn btn-outline-dark btn-sm">
   </td>
   </tr>
@@ -200,7 +200,34 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+<script>
+var count = 4;
+function ADDRow() {
+	
+	var my_tbody = document.getElementById('tbody');
+    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+    var cell8 = row.insertCell(7);
+    
+    
+    cell1.innerHTML = '<center><strong>'+count+'<strong></center>';
+    count++;
+    cell2.innerHTML = '<input class="rounded-3 border-1" type="text" size="10" id="ticker">';
+    cell3.innerHTML = '<select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction"><option selected>Buy</option><option value="1">Sell</option><option value="2">Reserve</option></select>';
+    cell4.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="date">';
+    cell5.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="shares">';
+    cell6.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="price">';
+    cell7.innerHTML = "<center><input type='button' value=\"Get Today's Price\" class='btn btn-outline-success btn-sm'></center>";
+    cell8.innerHTML = '<center><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></center>';
+	
+}
+</script>
 </body>
 </html>
 
