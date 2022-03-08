@@ -7,6 +7,9 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <%
     Stock TSLA = YahooFinance.get("TSLA");
     Stock AAPL = YahooFinance.get("AAPL");
@@ -153,7 +156,7 @@
  
   <div class="accordion-item">
     <h4 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
         <h5><img src="/resources/img/calculator.svg" style="width:20px; height:20px;"> <b>공모주청약 계산기(비례배정)</b></h5>
       </button>
     </h4>
@@ -193,12 +196,12 @@
       <br> 
       <div class="card hide" >
  	 <div class="card-body">
- 	 	당신의 청약예상 배정주는 약 <b>${ipoForm.deposit/(ipoForm.initialmargin*0.01)/ipoForm.comprate/ipoForm.ipoprice}</b>(주)입니다. <br>
- 	 	인정금액은 <b>${ipoForm.deposit/(ipoForm.initialmargin*0.01)}</b> (원)입니다. <br>
+ 	 	당신의 청약예상 배정주는 약 <b>  <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${ipoForm.deposit/(ipoForm.initialmargin*0.01)/ipoForm.comprate/ipoForm.ipoprice}" /></b>(주)입니다. <br>
+ 	 	인정금액은 <b> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${ipoForm.deposit/(ipoForm.initialmargin*0.01)}" /></b> (원)입니다. <br>
   	</div>
 	</div>
     <div class="card hide" >
- 	 <div class="card-body">
+ 	 <div class="card-body" align="center">
  	 	<% 
  	 	ArrayList<String> complist = new ArrayList<String>(); 
  	 	complist.add("1");
@@ -209,8 +212,11 @@
  	 	complist.add("250"); 
  	 	complist.add("500");
  		complist.add("1000");
+
  	 	%>
  	 	<c:set var="complist" value="<%=complist %>"/>
+
+
 
  	 	<table width="500" border= "1">
  	 	<tr>
@@ -218,13 +224,17 @@
  	 	<th>예상배정주</th>
  	 	</tr>
  	 	<c:forEach var="i" begin="0" end="7">
- 	 	<tr> 
+ 	 	      
+	<tr> 
  	 	<th>${complist[i]} :1</th>
- 	 	
- 	 	<th>
-		${ipoForm.deposit/(ipoForm.initialmargin*0.01)/ipoForm.ipoprice/complist[i]}<br>
+ 	 	<th> 
+		 <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${ipoForm.deposit/(ipoForm.initialmargin*0.01)/ipoForm.ipoprice/complist[i]}" />주
+		<br>
 		 </th>
 		 </tr>
+
+ 
+		
 		</c:forEach>
 
  	 	</table> 
@@ -238,6 +248,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
@@ -288,15 +299,17 @@
  	 <div class="card-body">
  	 	
  	 	<b>${divForm.stockprice}</b>원에 <b>${divForm.holdings}</b>주를 매입하여 <b>${(divForm.holdings*divForm.divpershare)}</b>의 배당금을 받았을 경우, <br>
- 	 	1회 배당수익률: 약 <b>${divForm.divpershare/divForm.stockprice*100}</b>% <br> 
- 	 	연 배당수익률: 약 <b>${divForm.divpershare/divForm.stockprice*100*divForm.unit}</b> %<br>
-
+ 	 	1회 배당수익률: 약 <b><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.divpershare/divForm.stockprice*100}" /></b>% <br> 
+ 	 	연 배당수익률: 약 <b><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.divpershare/divForm.stockprice*100*divForm.unit}" /></b> %<br>
   	</div>
 	</div>
+
+
+
            <div class="card hide" >
  	 <div class="card-body">
-      매년 연 배당 수익률 <b>${divForm.divpershare/divForm.stockprice*100*divForm.unit}</b>%의 배당금을 수령한다면?
-      
+      매년 연 배당 수익률 <b>  <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.divpershare/divForm.stockprice*100*divForm.unit}" /></b>%의 배당금을 수령한다면? <br>
+		<br>
       	<table width="500" border= "1">
  	 	<tr>
  	 	<th>기간(년)</th> 
@@ -306,31 +319,37 @@
  	 	
  	 	<tr> 
  	 	<th>1년</th>
- 	 	<th>${divForm.stockprice*divForm.holdings}
- 	 	<th>${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings}" /> 원</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	</tr>
+
+ 	 <tr> 
+ 	 	<th>2년</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	</tr>
+
+		<tr> 
+ 	 	<th>3년</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
  	 	</tr>
  	 	
- 	
- 		<%
- 			CalVO vo = new CalVO(); 
- 
- 			String stockprice= vo.getStockprice();
- 			
- 		%>
- 	
- 	 	<c:forEach var="i" begin="1" end="4">
+ 	 <tr> 
+ 	 	<th>4년</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	</tr>
  	 	
- 	 	<tr>
- 	 	<th>${i+1}년</th>
- 	 	<th>${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)} </th>
- 	 	
- 	 	
- 	 	<th></th>
+ 	 	<tr> 
+ 	 	<th>5년</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
+ 	 	<th> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${divForm.stockprice*divForm.holdings*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)*((divForm.divpershare/divForm.stockprice*100*divForm.unit)/100+1)}" /> 원</th>
  	 	</tr>
  	 	
 
-		</c:forEach>
-		 
+
+
 		
 		</table>
       
@@ -346,9 +365,6 @@
       </div>
     </div>
   </div>
-  
-  
-  
   
   
   
@@ -377,18 +393,14 @@
       	<td><input type="text" id='profit' name='profit' > </td>   
       	</tr>
       	
-      	<tr>
-      	<td><b>기간(단위):</b></td>
-      	<td> <input type="text" id='length' name='length'> </td>   
-      	</tr>
       	
       	<tr>
       	<td><b>단위(월/년):</b></td>
       	<td>
       	  <select class="form-select" id="unit" required>
      	 <option selected disabled value="">선택하세요</option> 
-    	  <option value="monthly">월</option>
-    	  <option value="yearly">년</option>
+    	  <option value="12">월</option>
+    	  <option value="1">년</option>
    		 </select>
     	  	
        </td>   
@@ -400,22 +412,106 @@
      <button type="reset">다시입력</button> 
     
       </form>    
+ <br>
+
+
+   <div class="card hide" >
+ 	 <div class="card-body">
+ 	 	
+ 	 	원금 <b>${compoundForm.seed}</b>을 <b>5년</b>간 매년 <b>${compundForm.profit}</b>의 수익률을 달성하였다면? <br>	
+ 	 	최종금액:<b> <fmt:formatNumber type="number" pattern="###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1)}" /></b>원
+ 	 	<br> 
+ 	 	최종수익률:<b> <fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${(compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1) *((compoundForm.profit/100)+1)-compoundForm.seed)/compoundForm.seed*100}" />%</b>
+ 	 	
+ 	 
+
+  	</div>
+	</div>
+
+
+     <div class="card hide" >
+ 	 <div class="card-body">
+ 
+		<br>
+      	<table width="500" border= "1">
+ 	 	<tr>
+ 	 	<th>기간(년)</th> 
+ 	 	<th>원금(원)</th>
+ 	 	<th>결과(원)</th>
+ 	 	</tr>
+
+
+ 	 	<tr> 
+ 	 	<th>1년</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed}" />원</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	</tr>
+
+ 	 		<tr> 
+ 	 	<th>2년</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	</tr>
+
+			<tr> 
+ 	 	<th>3년</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	</tr>
+ 	 	
+ 	 		<tr> 
+ 	 	<th>4년</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	</tr>
+ 	 	
+ 	 	<tr> 
+ 	 	<th>5년</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	<th><fmt:formatNumber type="number" pattern="###,###,###,###,###,###" value="${compoundForm.seed*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)*((compoundForm.profit/100)+1)}" />원</th>
+ 	 	</tr>
+ 	 	
+
+
+
+		
+		</table>
       
       
-      
-      
+      	</div>
+	</div>
+
+
+
+
+
 
       </div>
     </div>
+
+ 
+
+
+
+
+    
   </div>
-  
-  
-  
+
+
+
+
+
+
+
+
   
 </div>
        
        
-       
+      <br>
+      <br> 
+      <br>
+      <br> 
        
        
        

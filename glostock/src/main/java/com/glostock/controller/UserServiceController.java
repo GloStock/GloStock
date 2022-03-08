@@ -76,7 +76,7 @@ public class UserServiceController {
 	public String compoundForm(Model model, CalVO vo) {  
 		
 		
-		model.addAttribute("compoindForm", vo);
+		model.addAttribute("compoundForm", vo);
 		
 		return "user/service";
 		
