@@ -2,12 +2,16 @@ package com.glostock.apiservice;
 
 import com.glostock.model.CompanyVO;
 import com.glostock.model.NewsVO;
+import com.glostock.model.StockVO;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -99,6 +103,58 @@ public class PolygonAPIService {
             System.out.println("GET request not worked");
         }
         return profile;
+    }
+
+    public static ArrayList<StockVO> getFollowList() throws IOException {
+        ArrayList<StockVO> followList = new ArrayList<>();
+
+        String DISCOVER_URL = "https://api.polygon.io/v3/reference/tickers?type=CS&exchange=XNYS&active=true&sort=ticker&order=asc&limit=3&apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY";
+
+        URL discoverRequestObject = new URL(DISCOVER_URL);
+        HttpURLConnection discoverURLConnection = (HttpURLConnection) discoverRequestObject.openConnection();
+        discoverURLConnection.setRequestMethod("GET");
+        discoverURLConnection.setRequestProperty("User-Agent", USER_AGENT);
+
+        if (discoverURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) { // success
+            BufferedReader in = new BufferedReader(new InputStreamReader(discoverURLConnection.getInputStream()));
+            String inputLine;
+            StringBuffer discoverResponse = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                discoverResponse.append(inputLine);
+            }
+            in.close();
+
+            JSONObject jObject = new JSONObject(discoverResponse.toString());
+
+            JSONArray discoverResultArray = jObject.getJSONArray("results");
+            System.out.println(discoverResultArray.length());
+
+            for (Object jsonObject : discoverResultArray) {
+                StockVO vo = new StockVO();
+                JSONObject jsObject = (JSONObject) jsonObject;
+
+                vo.setTicker(jsObject.getString("ticker"));
+                vo.setName(jsObject.getString("name"));
+
+                Stock tempStock = YahooFinance.get(vo.getTicker());
+                vo.setCurrent_price(tempStock.getQuote().getPrice().doubleValue());
+
+                vo.setPrev_close_price(tempStock.getQuote().getPreviousClose().doubleValue());
+                vo.setChange_in_percentage(tempStock.getQuote().getChangeInPercent().doubleValue());
+
+                CompanyVO tempCompanyVO = getCompanyProfile(vo.getTicker());
+
+                vo.setLogo_url(tempCompanyVO.getCompany_logo_url());
+
+                followList.add(vo);
+            }
+
+        } else {
+            System.out.println("GET request not worked");
+        }
+
+        return followList;
     }
 
 }
