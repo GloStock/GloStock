@@ -107,9 +107,9 @@
           
           <div class="form-group">
             <label>Upload</label>
- 			<input type="file" class="form-control" id="inputGroupFile">
-		  </div>
-		  <div class="text_height_10"></div>
+ 	    <input type="file" class="form-control" id="inputGroupFile">
+	  </div>
+	  <div class="text_height_10"></div>
 		  
           <div class="form-group">
             <label>Content</label>
