@@ -28,8 +28,8 @@
 <!--@Component,@Repository,@Service,@Controller가 붙은 생성 -->
 	<context:component-scan base-package="com.glostock.controller" />
 	<context:component-scan base-package="com.glostock.service" />
-	<context:component-scan base-package="com.glostock.dao" />
-	<!--  <beans:bean id="scoreDAO" class="com.zerock.dao.ScoreDAOImpl" />-->
+	<context:component-scan base-package="com.glostock.mapper" />
+	
 	
 	
 	

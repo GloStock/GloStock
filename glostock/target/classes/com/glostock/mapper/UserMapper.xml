@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.glostock.mapper.UserMapper">
+
+<!-- 회원가입처리  -->
+<insert id="join" parameterType="com.glostock.model.UserVO">
+	insert into glo_user (username,nickname, email, password, phone, dataagree)
+		values (#{username},#{nickname},#{email},#{password},#{phone},#{dataagree})
+</insert>
+
+<select id="login" 
+resultType="int"
+parameterType="com.glostock.model.UserVO">
+SELECT COUNT(*)
+ FROM glo_user
+ WHERE email=#{email} and password=#{password}
+</select>
+
+
+</mapper>
+
+
