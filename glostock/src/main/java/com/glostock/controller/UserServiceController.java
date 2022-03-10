@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.glostock.command.CalVO;
@@ -37,8 +38,11 @@ private UserService service;
 		int result= service.login(vo);
 		
 		if (result==1) {//로그인성공(세션생성)
-			session.setAttribute("user_id", vo.getNickname());
-			return "redirect:/"; 
+
+			session.setAttribute("user_email", vo.getEmail());
+			session.setAttribute("user_password", vo.getPassword());
+
+			return "redirect:/user/feed"; 
 		
 		} else { //로그인 실패 
 			RA.addFlashAttribute("msg","아이디 비밀번호를 확인하세요");
@@ -72,8 +76,6 @@ private UserService service;
 			RA.addFlashAttribute("msg","회원가입에 실패했습니다.");
 			return "redirect:/user/join"; 
 		}
-		
-		
 
 	}
 	
@@ -117,7 +119,7 @@ private UserService service;
 		
 		model.addAttribute("ipoForm", vo);
 		
-		return "user/service";
+		return "user/service#first";
 		
 	} 
 	
@@ -127,7 +129,7 @@ private UserService service;
 		
 		model.addAttribute("divForm", vo);
 		
-		return "user/service";
+		return "user/service#second";
 		
 	} 
 	
@@ -137,30 +139,137 @@ private UserService service;
 		
 		model.addAttribute("compoundForm", vo);
 		
-		return "user/service";
+		return "user/service#third";
 		
 	} 
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@RequestMapping("/crypto")
 	public String crypto() {
 		return "user/crypto";
 	}
 	
+	//마이페이지
 	@RequestMapping("/mypage")
-	public String mypage() {
+	public String mypage(HttpSession session, Model model) {
+	//세션없을경우 접근불가
+		if (session.getAttribute("user_email")==null) { 
+		return "redirect:/user/login"; }
+		
+		else { 
+			session.getAttribute("user_email");
+			session.getAttribute("user_password");
+			String user_email= (String)session.getAttribute("user_email");
+			
+			
+			UserVO vo=service.mypage(user_email);
+			model.addAttribute("mypage", vo);
+		
 		return "user/mypage";
+		}
 	}
+	
+	@RequestMapping("/update")
+	public String update(HttpSession session, Model model) {
+		
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; }
+			
+			else { 
+				session.getAttribute("user_email");
+				session.getAttribute("user_password");
+				String user_email= (String)session.getAttribute("user_email");
+				
+				UserVO vo=service.mypage(user_email);
+				model.addAttribute("mypage", vo);
+	
+		
+		return "user/update"; 
+		}
+	}
+	
+	@RequestMapping("/myinfo")
+	public String myinfo(HttpSession session, Model model) {
+		
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; }
+			
+			else { 
+				session.getAttribute("user_email");
+				session.getAttribute("user_password");
+				String user_email= (String)session.getAttribute("user_email");
+				
+				UserVO vo=service.mypage(user_email);
+				model.addAttribute("mypage", vo);
+		
+		
+		return "user/myinfo"; }
+	}
+	
+	
+	
+	
+	//내정보수정
+	@RequestMapping("updateForm")
+	public String updateform(HttpSession session, Model model, UserVO vo) {
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; } 
+		else { 
+		service.update(vo);
+		
+	
+		model.addAttribute("mypage", vo); 
+		
+		
+		return "redirect:/user/myinfo";
+		}
+	}
+	
+	@RequestMapping("/passwordupdate")
+	public String passwordupdate(HttpSession session, Model model) {
+		
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; }
+			
+			else { 
+				session.getAttribute("user_email");
+				session.getAttribute("user_password");
+				String user_password= (String)session.getAttribute("user_password");
+				
+				UserVO vo=service.mypage(user_password);
+				model.addAttribute("mypage", vo);
+
+		return "user/passwordupdate"; }
+	}
+	
+	//비밀번호수정
+		@RequestMapping("passwordUpdate")
+		public String passwordUpdate(HttpSession session, Model model, @RequestParam ("newpassword") String newpassword )  {
+			if (session.getAttribute("user_email")==null) { 
+				return "redirect:/user/login"; } 
+			else { 
+				UserVO vo= new UserVO(); 
+				vo.setNewpassword(newpassword);
+				
+				service.passwordchange(vo);
+			
+		
+			
+			return "redirect:/user/mypage";
+			}
+		}
 
 	
-	
-	
+	//로그아웃
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {  
+		session.removeAttribute("user_email");
+		session.removeAttribute("user_password");
+
+		session.invalidate(); 
+		
+		return "redirect:/"; 
+	}
 	
 	
 	

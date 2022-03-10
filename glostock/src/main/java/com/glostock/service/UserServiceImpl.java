@@ -32,11 +32,27 @@ public class UserServiceImpl implements UserService{
 		return result;
 	}
 	
+	@Override
+	public UserVO mypage(String email) {
+		UserVO vo=mapper.mypage(email);
+		
+		return vo;
+	}
 	
 	
+	@Override
+	public void update(UserVO vo) {
+		boolean bool= mapper.update(vo);
+		
+		
+	}
 	
-	
-	
+	@Override
+	public void passwordchange(UserVO vo) {
+		boolean bool= mapper.passwordchange(vo);
+		
+		
+	}
 	
 	
 }
