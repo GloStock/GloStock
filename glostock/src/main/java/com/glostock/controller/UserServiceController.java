@@ -105,40 +105,50 @@ public class UserServiceController {
 	@RequestMapping("/follow")
 	public String follow(HttpSession session) {
 
-		System.out.println(session.getAttribute("user_id"));
-
-		if (session.getAttribute("user_id") != null) {
-			String nickname = (String)session.getAttribute("user_id");
-
-			ArrayList<FollowVO> followList = followService.getFollowList(nickname);
-			ArrayList<StockVO> returnFollowList = new ArrayList<StockVO>();
-			for (FollowVO vo : followList) {
-				String stockTicker = vo.getTicker();
-				StockVO tempVO = new StockVO();
-				tempVO.setTicker(stockTicker);
-				Stock tempStock = null;
-				try {
-					tempStock = YahooFinance.get(stockTicker);
-				} catch (Exception e) {
-					System.out.println("Could not recognise the ticker symbol. Try again.");
-					e.printStackTrace();
-				}
-				tempVO.setCurrent_price(tempStock.getQuote().getPrice().doubleValue());
-				tempVO.setName(tempStock.getName());
-				tempVO.setChange_in_percentage(tempStock.getQuote().getChangeInPercent().doubleValue());
-				tempVO.setPrev_close_price(tempStock.getQuote().getPreviousClose().doubleValue());
-
-			}
-		}
+		String nickname = "TestNickname";
+		FollowVO vo = new FollowVO();
+		vo.setNickname(nickname);
+//		ArrayList<FollowVO> followList = followService.getFollowList(vo);
+//		ArrayList<StockVO> returnFollowList = new ArrayList<StockVO>();
+//		for (FollowVO vo : followList) {
+//			String stockTicker = vo.getTicker();
+//			StockVO tempVO = new StockVO();
+//			tempVO.setTicker(stockTicker);
+//			Stock tempStock = null;
+//			try {
+//				tempStock = YahooFinance.get(stockTicker);
+//			} catch (Exception e) {
+//				System.out.println("Could not recognise the ticker symbol. Try again.");
+//				e.printStackTrace();
+//			}
+//			tempVO.setCurrent_price(tempStock.getQuote().getPrice().doubleValue());
+//			tempVO.setName(tempStock.getName());
+//			tempVO.setChange_in_percentage(tempStock.getQuote().getChangeInPercent().doubleValue());
+//			tempVO.setPrev_close_price(tempStock.getQuote().getPreviousClose().doubleValue());
+//			returnFollowList.add(tempVO);
+//		}
 
 		return "user/follow";
 	}
 
 	@RequestMapping("/addFollow")
 	public String addFollow(@RequestParam("ticker") String ticker, HttpSession session) {
-		String user_id = (String)session.getAttribute("user_id");
-		System.out.println(user_id);
-		followService.follow(user_id, ticker);
+//		String user_id = (String)session.getAttribute("user_id");
+//		System.out.println(user_id);
+		FollowVO vo = new FollowVO();
+		vo.setTicker(ticker);
+		vo.setNickname("TestNickname");
+		followService.follow(vo);
+
+		return "redirect:/user/follow";
+	}
+
+	@RequestMapping("/deleteFollow")
+	public String deleteFollow(@RequestParam("ticker") String ticker, HttpSession session) {
+		FollowVO vo = new FollowVO();
+		vo.setTicker(ticker);
+		vo.setNickname("TestNickname");
+		followService.deleteFollow(vo);
 
 		return "redirect:/user/follow";
 	}
