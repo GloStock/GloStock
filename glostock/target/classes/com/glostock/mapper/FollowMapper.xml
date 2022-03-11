@@ -10,19 +10,19 @@
         insert into glo_follow (nickname, ticker)
         values (#{nickname},#{ticker})
     </insert>
-<!--  
+
     <select id="getFollowList"
             resultType="ResultSet"
             parameterType="com.glostock.model.FollowVO">
         SELECT *
         FROM glo_follow
-        WHERE email=#{email} and password=#{password}
+        WHERE nickname=#{nickname}
     </select>
 
-    <delete id="delete" parameterType="String">
+    <delete id="deleteFollow" parameterType="com.glostock.model.FollowVO">
         DELETE FROM glo_follow WHERE nickname=#{nickname} AND ticker=#{ticker}
     </delete>
--->
+
 </mapper>
 
 

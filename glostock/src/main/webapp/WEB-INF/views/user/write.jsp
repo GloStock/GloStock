@@ -81,33 +81,33 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="card-header text-light bg-dark"><strong>Board Register</strong></div>
+      <div class="card-header text-light bg-dark"><strong>피드 등록하기</strong></div>
       <div class="card-body">
 
 
 
         <form role="form" action="register" method="post" id="regform">
           <div class="form-group">
-            <label>Title</label>
+            <label>제목</label>
             <input class="form-control" name="title" id="title">
           </div>
           <div class="text_height_10"></div>
           
           <div class="form-group">
-            <label>Ticker</label>
-            <input class="form-control" name="title" id="tag">
+            <label>티커심볼</label>
+            <input class="form-control" name="ticker" id="ticker">
           </div>
           <div class="text_height_10"></div>
 		  
           <div class="form-group">
-            <label>Content</label>
+            <label>내용</label>
             <textarea class="form-control" style="height:300px;" name="content" id="content"></textarea>
           </div>
           <div class="text_height_10"></div>
 
           <div class="form-group">
-            <label>writer</label>
-            <input class="form-control" name="writer" id="writer">
+            <label>작성자(별명)</label>
+            <input class="form-control" name="writer" id="writer" readonly>
           </div>
           <div class="text_height_10"></div>
           <button type="submit" class="btn btn-outline-dark btn-sm">등록</button>
