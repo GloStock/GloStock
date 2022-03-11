@@ -162,17 +162,17 @@ public class UserServiceController {
 		String[] ticker = request.getParameterValues("ticker");
 		String[] transaction = request.getParameterValues("transaction");
 		String[] shares = request.getParameterValues("shares");
-		String[] price = request.getParameterValues("price");
-		String nickname= ""; 
-		String pfname= ""; 
+		String[] price = request.getParameterValues("price"); 
 		
 		//배열의 인덱스를 for문으로 돌려서 인덱스 별로 vo에 저장 그리고 서비스로
 		for(int i=0;i<ticker.length;i++) {
 			vo.setTicker(ticker[i]);
 			vo.setTransaction(transaction[i]);
 			vo.setShares(shares[i]);
-			vo.setPrice(price[i]);		
+			vo.setPrice(price[i]);
+			String nickname = request.getParameter("nickname");
 			vo.setNickname(nickname);
+			String pfname = request.getParameter("pfname");
 			vo.setPfname(pfname);
 			
 			portservice.insertPort(vo);		
@@ -186,11 +186,19 @@ public class UserServiceController {
 	
 	@RequestMapping(value="/portfolio_result")
 	public String portfolio_result(HttpSession session, PortfolioVO vo,Model model) {
-		String pfname= "" ;
+		String pfname = (String)session.getAttribute("pfname");
 		ArrayList<PortfolioVO> DB = portservice.getList(pfname);
 		model.addAttribute("port", DB);
 			
 		return "user/portfolio_result";
+	}
+	
+	@RequestMapping("/portfolio_delete")
+	public String pf_delete(HttpSession session) {
+		
+		String pfname = (String)session.getAttribute("pfname");		service.delete(pfname);
+		
+		return "redirect:/user/portfolio";
 	}
 	
 	@RequestMapping("/service") //계산기 유저서비스 화면
