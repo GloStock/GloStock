@@ -67,6 +67,7 @@
         }
         body {
       background: linear-gradient(to bottom right, #54E6DE, pink);
+      height : 1000px;
 	}
 		.margin_height{
 			height:30px;
@@ -116,13 +117,8 @@
 	<div class="container">
 	<h6>Portfolio&nbsp;&nbsp;
 		<select class="btn btn-outline-dark btn-sm">
-			<option selected>${sessionScope.pfname}</option>
-			<% ArrayList<PortfolioVO> list = (ArrayList<PortfolioVO>)request.getAttribute("port");
-				for(PortfolioVO vo : list){
-					String pfname = vo.getPfname();
-			%>			
-			<option><%=vo.getPfname() %></option>
-			<%} %>
+			<option selected>Choose Portfolio Name!</option>		
+			<option>${sessionScope.pfname}</option>
 		</select>
 	</h6>
 	<table class="table border border-light border-3">
@@ -148,15 +144,17 @@
 
 	
 	<%
-	
+	ArrayList<PortfolioVO> list = (ArrayList<PortfolioVO>)request.getAttribute("port");
+	int no=1;
 	for(PortfolioVO str : list){
+		
 		String ticker = str.getTicker();
     	
     	if(ticker.contains("TSLA")){
     		String currency="$";    	
     %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no%></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=TSLA.getName()%></td>
     <td class="text-danger"><%=currency%><%=TSLA.getQuote().getPrice()%></td>
@@ -168,7 +166,7 @@
     <td><%=TSLA.getQuote().getVolume() %></td>
     <td><%=str.getTransaction() %></td>
     
-    <td><%=str.getShares() %></td>
+    <td><%=no%></td>
     <td><%=TSLA.getQuote().getPrice()%></td>
     <td style="text-align:right;"><%=TSLA.getQuote().getDayHigh() %></td> 
       <% if(TSLA.getQuote().getPrice().compareTo(TSLA.getQuote().getPreviousClose()) > 0) { %>
@@ -185,7 +183,7 @@
     	String currency="$";
     %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no %></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=AAPL.getName()%></td>
     <td class="text-danger"><%=currency%><%=AAPL.getQuote().getPrice()%></td>
@@ -214,7 +212,7 @@
     	String currency="$";
      %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no %></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=MSFT.getName()%></td>
     <td class="text-danger"><%=currency%><%=MSFT.getQuote().getPrice()%></td>
@@ -244,7 +242,7 @@
     	String currency="$";
     %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no %></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=AMZN.getName()%></td>
     <td class="text-danger"><%=currency%><%=AMZN.getQuote().getPrice()%></td>
@@ -274,7 +272,7 @@
     	String currency="$";
     %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no %></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=FB.getName()%></td>
     <td class="text-danger"><%=currency%><%=FB.getQuote().getPrice()%></td>
@@ -304,7 +302,7 @@
     	String currency="€";
     %>
     <tr>
-	<th><%=str.getPfnum() %></th>
+	<th><%=no %></th>
 	<td><strong><%=str.getTicker() %></strong></td>
     <td><%=ADS.getName()%></td>
     <td class="text-danger"><%=currency%><%=ADS.getQuote().getPrice()%></td>
@@ -331,24 +329,32 @@
       <%} %>
     </tr>
     <%}%>
-  <%}%>
+  <%no++;}%>
 	
 
   </tbody>
   <tfoot>
+  <tr class="table-success">
+  <th colspan="2" style="text-align:center;">Total</th>
+  <th colspan="2">Total Stocks</th>
+  <th class="text-danger" style="font-weight: bold; text-align: right;">Total change</th>
+  <th colspan="4">
+  <th colspan="2" style="text-align:center;">Some</th>
+  <th style="text-align:center;">Some</th>
+  <th class="text-danger" style="text-align:center;" font-weight: bold;">Some</th>
+  </tr>
   <tr>
-  <td colspan="2" style="text-align:center; font-weight: bold;">Total</td>
+  <td colspan="2"></td>
   
-  <td colspan="2" style="font-weight: bold;">Stocks</td>
+  <td colspan="2" style="font-weight: bold;"><%=(no-1)%>&nbsp;Stocks</td>
   
   <td class="text-danger" style="font-weight: bold; text-align: right;">
   +0.00%
   </td>
   <td colspan="4"></td>
   
-  <td style="text-align:right;">117948.73</td>
-  <td style="text-align:right;">0.00</td>
-  <td style="text-align:right;">0.00</td>
+  <td colspan="2" style="text-align:center;">117948.73</td>
+  <td style="text-align:center;">0.00</td>
   <!-- 
   <c:choose>
       <c:when test="${change.charAt[0]=='+'}">
@@ -367,7 +373,7 @@
 
 <div align="right">
 <button class="btn btn-outline-dark" onclick="location.href='portfolio'">Back</button>
-<button class="btn btn-outline-dark" onclick="location.href='delete?pfname=${pName.pfname}'">Delete</button>
+<button class="btn btn-outline-dark" onclick="location.href='portfolio_delete'">Delete</button>
 <button class="btn btn-outline-dark" onclick="location.href='feed'">My Feed</button>
 <button class="btn btn-outline-dark" onclick="location.href='service'">My Service</button>
 </div>
@@ -382,3 +388,4 @@
 
 </body>
 </html>
+
