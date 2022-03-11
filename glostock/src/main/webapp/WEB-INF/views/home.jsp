@@ -26,8 +26,8 @@
 						<img src="../../resources/img/main-banner-img.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
 					</div>
 					<div class="col-lg-6">
-						<h1 class="display-5 fw-bold lh-1 mb-3">금융 소식 여기 모여라</h1>
-						<p class="lead">많고 많은 금융 소식을 한곳에 글로 스탁에서! 종목별로! 업종별로!</p>
+						<h1 class="display-5 fw-bold lh-1 mb-3">금융 소식 여기 모여라!</h1>
+						<p class="lead">많고 많은 금융 소식을 글로스탁 커뮤니티와 공유 <br> 해보세요!</p>
 						
 						<c:choose>
 						<c:when test="${sessionScope.user_email==null }"> 
@@ -53,10 +53,10 @@
 		</div>
 		<div class="second-main-banner">
 			<div class="px-4 pt-5 my-5 text-center border-bottom">
-				<h1 class="display-4 fw-bold words">$TSLA 소식이 궁금해?</h1>
+				<h1 class="display-4 fw-bold words">테슬라, 애플 소식이 궁금해? </h1>
 				<div class="col-lg-6 mx-auto">
-					<p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-				
+					<p class="lead mb-4">종목별로 글로스탁 포스팅을 검색해보세요!</p>
+			
 				</div>
 				<div class="overflow-hidden" style="max-height: 30vh;">
 					<div class="container px-5">
@@ -67,7 +67,7 @@
 		</div>
 		<div class="third-main-banner">
 			<div class="container px-4 py-5" id="featured-3">
-				<h2 class="pb-2 border-bottom">소식만 모아주는거 아니야? 응~ 아니야~</h2>
+				<h2 class="pb-2 border-bottom">최신으로 올라오는 글로스탁 포스팅을 확인해보세요!</h2>
 				<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 					<div class="feature col">
 						<div class="feature-icon bg-primary bg-gradient">
