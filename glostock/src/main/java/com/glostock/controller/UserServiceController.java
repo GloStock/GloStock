@@ -182,7 +182,7 @@ public class UserServiceController {
 			String pfname = request.getParameter("pfname");
 			vo.setPfname(pfname);
 			
-			service.insertPort(vo);
+			portservice.insertPort(vo);
 			
 		}
 		//세션에 포트폴리오 이름 저장 (result에 기준값 넘기기 위해서)
@@ -197,7 +197,7 @@ public class UserServiceController {
 		System.out.println("==controller==");
 		String pfname = (String)session.getAttribute("pfname");
 		System.out.println("pfname : " + pfname);
-		ArrayList<PortfolioVO> DB = service.getList(pfname);
+		ArrayList<PortfolioVO> DB = portservice.getList(pfname);
 		model.addAttribute("port", DB);
 			
 		return "user/portfolio_result";
@@ -208,7 +208,7 @@ public class UserServiceController {
 		System.out.println("==controller==");
 		String pfname = (String)session.getAttribute("pfname");
 		System.out.println("포트폴리오 이름 : " + pfname);
-		service.delete(pfname);
+		portservice.delete(pfname);
 		
 		return "redirect:/user/portfolio";
 	}
