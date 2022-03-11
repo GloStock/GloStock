@@ -217,6 +217,22 @@
         <div class="container">
             <div class="row row-cols-1" id="addTarget">
 
+                <div class="card follow-card text-white bg-dark">
+                    <div class="card-header discover-card-header text-white bg-dark">
+                        <h5 class="card-title discover-title">Tesla, Inc.</h5>
+                        <h6 class="card-title discover-title">$TSLA</h6>
+                    </div>
+                    <div class="card-body discover-card-body">
+                        <img src="https://api.polygon.io/v1/reference/company-branding/d3d3LnRlc2xhLmNvbQ/images/2022-01-10_icon.png + "?apiKey=Q2mEmcBtNaeo2pmA5WgKU0h7rVYvFrJY"%" alt="TESLA logo">
+                    </div>
+                    <div class="card-body discover-card-body-main">
+                        <p class="card-text">Curr. Price: $100 · Prev. Close: $120 · Delta: $20%</p>
+                    </div>
+                    <div class="card-footer discover-card-footer text-white bg-dark">
+                        <a href="/user/addFollow?ticker=TSLA" class="btn btn-outline-success">Follow</a>
+                    </div>
+                </div>
+
                 <%
                     for (StockVO discoverVO : discoverList) {
                         %>
@@ -232,7 +248,7 @@
                                     <p class="card-text">Curr. Price: $<%=discoverVO.getCurrent_price()%> · Prev. Close: $<%=discoverVO.getPrev_close_price()%> · Delta: $<%=discoverVO.getChange_in_percentage()%></p>
                                 </div>
                                 <div class="card-footer discover-card-footer text-white bg-dark">
-                                    <a href="#" class="btn btn-outline-success">Follow</a>
+                                    <a href="/user/addFollow?ticker=TSLA" class="btn btn-outline-success">Follow</a>
                                 </div>
                             </div>
                         <%
