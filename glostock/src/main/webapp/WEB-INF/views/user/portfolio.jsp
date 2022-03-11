@@ -159,8 +159,8 @@
   <tfoot>
   <tr>
   <td></td>
-  <td colspan="7" style="text-align: center;">
-  <input class="rounded-3 border-1" type="text" size="15" name="nickname">
+  <th colspan="2" style="text-align:right;">Nickname&nbsp;&nbsp;<input class="rounded-3 border-1" type="text" size="12" name="nickname"></th>
+  <td colspan="5" style="text-align: left;">
   <input type="submit" value="Save Changes" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
   <input type="button" value="Cancel" class="btn btn-outline-dark btn-sm" onclick="location.href='feed'">&nbsp;&nbsp;
   <input type="button" value="Undo" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
@@ -214,16 +214,6 @@ function ADDRow() {
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
-    
-    /* cell1.innerHTML = '<center><strong>'+No+'<strong></center>';
-    
-    cell2.innerHTML = '<input class="rounded-3 border-1" type="text" size="10" name="ticker'+No+'">';
-    cell3.innerHTML = '<select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" name="transaction'+No+'">"><option selected>Buy</option><option value="1">Sell</option><option value="2">Reserve</option></select>';
-    cell4.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="date'+No+'">';
-    cell5.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="shares'+No+'">';
-    cell6.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="price'+No+'">';
-    cell7.innerHTML = "<center><input type='button' value=\"Get Today's Price\" class='btn btn-outline-success btn-sm'></center>";
-    cell8.innerHTML = '<center><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></center>'; */
 	
     cell1.innerHTML = '<center><strong>'+No+'<strong></center>';
     cell2.innerHTML = '<input class="rounded-3 border-1" type="text" id="ticker" size="10" name="ticker">';
@@ -240,3 +230,4 @@ function ADDRow() {
 </script>
 </body>
 </html>
+
