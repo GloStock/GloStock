@@ -43,6 +43,16 @@ SELECT COUNT(*)
 	where email= #{email} 
 </update>
 
+<delete id="userleave" parameterType="com.glostock.model.UserVO">
+	DELETE FROM glo_user 
+	where email=#{email} and password=#{password}
+
+</delete>
+
+
+
+
+
 
 
 

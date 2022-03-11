@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +28,25 @@
 					<div class="col-lg-6">
 						<h1 class="display-5 fw-bold lh-1 mb-3">금융 소식 여기 모여라</h1>
 						<p class="lead">많고 많은 금융 소식을 한곳에 글로 스탁에서! 종목별로! 업종별로!</p>
+						
+						<c:choose>
+						<c:when test="${sessionScope.user_email==null }"> 
 						<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 							<button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick="location.href='user/login'">로그인</button>
 							<button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="location.href='user/join'">회원가입</button>
 						</div>
+						
+						</c:when>
+						
+						<c:when test="${sessionScope.user_email!=null }"  >
+						<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+							<button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick="location.href='${pageContext.request.contextPath}/user/logout'">로그아웃</button>
+							<button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="location.href='user/feed'">피드확인하기</button>
+						</div>
+						
+						
+						</c:when>
+						</c:choose>
 					</div>
 				</div>
 			</div>

@@ -82,7 +82,7 @@ margin:0 auto;
 			  <a href="update" class="list-group-item">내 정보수정 </a>
 			  <a href="passwordupdate" class="list-group-item">비밀번호 변경</a>
 			  <a href="logout" class="list-group-item">로그아웃</a>
-			  <a href="#" class="list-group-item">회원탈퇴</a>
+			  <a href="userleave" class="list-group-item">회원탈퇴</a>
 			</div> 
 		</div>
 	</article> 

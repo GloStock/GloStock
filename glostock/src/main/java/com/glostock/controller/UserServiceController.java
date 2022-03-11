@@ -292,6 +292,12 @@ public class UserServiceController {
 	
 	
 	
+	//비밀번호업데이트화면
+	@RequestMapping("/passwordupdate") 
+	public String passwordupdate() {
+		return "user/passwordupdate";	
+	}
+	
 	
 	//내정보수정
 	@RequestMapping("updateForm")
@@ -308,32 +314,22 @@ public class UserServiceController {
 		}
 	}
 	
-	@RequestMapping("/passwordupdate")
-	public String passwordupdate(HttpSession session, Model model) {
-		
-		if (session.getAttribute("user_email")==null) { 
-			return "redirect:/user/login"; }
-			
-			else { 
-				session.getAttribute("user_email");
-				session.getAttribute("user_password");
-				String user_password= (String)session.getAttribute("user_password");
-				
-				UserVO vo=service.mypage(user_password);
-				model.addAttribute("mypage", vo);
 
-		return "user/passwordupdate"; }
-	}
+	
+	
+	
+	
 	
 	//비밀번호수정
 		@RequestMapping("passwordUpdate")
-		public String passwordUpdate(HttpSession session, Model model, @RequestParam ("newpassword") String newpassword )  {
+		public String passwordUpdate(HttpSession session, Model model, @RequestParam ("newpassword") String newpassword  )  {
 			if (session.getAttribute("user_email")==null) { 
 				return "redirect:/user/login"; } 
 			else { 
 				UserVO vo= new UserVO(); 
+				String user_email= (String)session.getAttribute("user_email");
 				vo.setNewpassword(newpassword);
-				
+				vo.setEmail(user_email);
 				service.passwordchange(vo);
 			
 		
@@ -346,12 +342,50 @@ public class UserServiceController {
 	//로그아웃
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {  
-		session.removeAttribute("user_email");
-		session.removeAttribute("user_password");
-
+		
 		session.invalidate(); 
 		
 		return "redirect:/"; 
 	}
 
+	
+	
+	//비밀번호업데이트화면
+	@RequestMapping("/userleave") 
+	public String userleave() {
+		
+		return "user/userleave";	
+	}
+	
+	
+	//회원탈퇴
+	@RequestMapping("userLeave")
+	public String userLeave(HttpSession session, Model model)  {
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; } 
+		else { 
+			
+			UserVO vo= new UserVO(); 
+			session.getAttribute("user_email");
+			session.getAttribute("user_password");
+			String user_email= (String)session.getAttribute("user_email");
+			String user_password=(String) session.getAttribute("user_password");
+
+			vo.setEmail(user_email);
+			vo.setPassword(user_password);
+			service.userleave(vo);
+		
+	
+		
+		return "redirect:/";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

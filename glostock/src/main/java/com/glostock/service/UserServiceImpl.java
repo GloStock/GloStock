@@ -55,4 +55,18 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	
+	@Override
+	public void userleave(UserVO vo) {
+		boolean bool= mapper.userleave(vo);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
