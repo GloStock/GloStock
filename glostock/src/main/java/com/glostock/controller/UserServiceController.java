@@ -108,6 +108,44 @@ private UserService service;
 		return "user/portfolio";
 	}
 	
+	@RequestMapping(value="/portfolio_insert",method=RequestMethod.POST)
+	public String portfolio_insert(HttpServletRequest request,HttpSession session) {
+		
+		PortfolioVO vo = new PortfolioVO();
+		
+		//form태그에서 row별로 이름을 배열로 받음
+		String[] ticker = request.getParameterValues("ticker");
+		String[] transaction = request.getParameterValues("transaction");
+		String[] shares = request.getParameterValues("shares");
+		String[] price = request.getParameterValues("price");
+		
+		//배열의 인덱스를 for문으로 돌려서 인덱스 별로 vo에 저장 그리고 서비스로
+		for(int i=0;i<ticker.length;i++) {
+			vo.setTicker(ticker[i]);
+			vo.setTransaction(transaction[i]);
+			vo.setShares(shares[i]);
+			vo.setPrice(price[i]);		
+			vo.setNickname(nickname);
+			vo.setPfname(pfname);
+			
+			service.insertPort(vo);		
+		}
+		
+		//세션에 포트폴리오 이름 저장 (result에 기준값 넘기기 위해서)
+		session.setAttribute("pfname", request.getParameter("pfname"));
+		
+		return "user/portfolio_insert";	
+	}
+	
+	@RequestMapping(value="/portfolio_result")
+	public String portfolio_result(HttpSession session, PortfolioVO vo,Model model) {
+		
+		ArrayList<PortfolioVO> DB = service.getList(pfname);
+		model.addAttribute("port", DB);
+			
+		return "user/portfolio_result";
+	}
+	
 	@RequestMapping("/service") //계산기 유저서비스 화면
 	public String service() {
 		return "user/service";	
