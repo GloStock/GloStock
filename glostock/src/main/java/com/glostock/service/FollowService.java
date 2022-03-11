@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public interface FollowService {
 
-    public int follow(String nickname, String ticker);
-    public ArrayList<FollowVO> getFollowList(String nickname);
-    public int delete(String nickname, String ticker);
+    public void follow(FollowVO vo);
+    public ArrayList<FollowVO> getFollowList(FollowVO vo);
+    public void deleteFollow(FollowVO vo);
 
 }

@@ -1,10 +1,15 @@
 package com.glostock.mapper;
 
+import com.glostock.model.FollowVO;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 public interface FollowMapper {
 
-    public int follow(String nickname, String ticker); // 팔로우 등록
-    public int delete(String nickname, String ticker); // 팔로우 삭제
-    public int select(String nickname);
+    public int follow(FollowVO vo);
+    public ResultSet getFollowList(FollowVO vo);
+    public int deleteFollow(FollowVO vo);
 
 }
 

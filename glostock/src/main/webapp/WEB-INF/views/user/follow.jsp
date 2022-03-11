@@ -12,7 +12,7 @@
     int discoverCounter = 0;
 
     ArrayList<StockVO> followList = new ArrayList<>();
-    StockVO TSLA = new StockVO("TSAL", "Tesla, Inc.", 100, 100, 10);
+    StockVO TSLA = new StockVO("TSLA", "Tesla, Inc.", 100, 100, 10);
     followList.add(TSLA);
 
     ArrayList<StockVO> discoverList = null;
@@ -193,7 +193,7 @@
                         <p class="card-text">Curr. Price: $<%=followVO.getCurrent_price()%> · Prev. Close: $<%=followVO.getPrev_close_price()%> · Delta: $<%=followVO.getChange_in_percentage()%></p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-outline-danger">Unfollow</a>
+                        <a href="/user/deleteFollow?ticker=TSLA" class="btn btn-outline-danger">Unfollow</a>
                     </div>
                 </div>
                 <%
