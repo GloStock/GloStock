@@ -11772,3 +11772,9 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-11 12:05:56.199
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-11 12:10:54.064
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-03-11 12:10:54.066
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
