@@ -8,6 +8,8 @@ import com.glostock.model.FollowVO;
 import com.glostock.model.PortfolioVO;
 import com.glostock.model.StockVO;
 import com.glostock.service.FollowService;
+import com.glostock.service.PortfolioService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,7 @@ import com.glostock.model.UserVO;
 import com.glostock.service.UserService;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
-
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user/*")
@@ -33,6 +35,10 @@ public class UserServiceController {
 	@Autowired
 	private FollowService followService;
 
+	@Autowired
+	private PortfolioService portservice;
+	
+	
 	//로그인페이지
 	@RequestMapping("/login")
 	public String login() { 
@@ -157,6 +163,8 @@ public class UserServiceController {
 		String[] transaction = request.getParameterValues("transaction");
 		String[] shares = request.getParameterValues("shares");
 		String[] price = request.getParameterValues("price");
+		String nickname= ""; 
+		String pfname= ""; 
 		
 		//배열의 인덱스를 for문으로 돌려서 인덱스 별로 vo에 저장 그리고 서비스로
 		for(int i=0;i<ticker.length;i++) {
@@ -167,7 +175,7 @@ public class UserServiceController {
 			vo.setNickname(nickname);
 			vo.setPfname(pfname);
 			
-			service.insertPort(vo);		
+			portservice.insertPort(vo);		
 		}
 		
 		//세션에 포트폴리오 이름 저장 (result에 기준값 넘기기 위해서)
@@ -178,8 +186,8 @@ public class UserServiceController {
 	
 	@RequestMapping(value="/portfolio_result")
 	public String portfolio_result(HttpSession session, PortfolioVO vo,Model model) {
-		
-		ArrayList<PortfolioVO> DB = service.getList(pfname);
+		String pfname= "" ;
+		ArrayList<PortfolioVO> DB = portservice.getList(pfname);
 		model.addAttribute("port", DB);
 			
 		return "user/portfolio_result";
@@ -344,11 +352,6 @@ public class UserServiceController {
 		session.invalidate(); 
 		
 		return "redirect:/"; 
-	}
-	
-	@RequestMapping("/portfolio_result")
-	public String portfolio_result() {
-		return "user/portfolio_result";
 	}
 
 }
