@@ -108,25 +108,28 @@ public class UserServiceController {
 		String nickname = "TestNickname";
 		FollowVO vo = new FollowVO();
 		vo.setNickname(nickname);
-//		ArrayList<FollowVO> followList = followService.getFollowList(vo);
-//		ArrayList<StockVO> returnFollowList = new ArrayList<StockVO>();
-//		for (FollowVO vo : followList) {
-//			String stockTicker = vo.getTicker();
-//			StockVO tempVO = new StockVO();
-//			tempVO.setTicker(stockTicker);
-//			Stock tempStock = null;
-//			try {
-//				tempStock = YahooFinance.get(stockTicker);
-//			} catch (Exception e) {
-//				System.out.println("Could not recognise the ticker symbol. Try again.");
-//				e.printStackTrace();
-//			}
-//			tempVO.setCurrent_price(tempStock.getQuote().getPrice().doubleValue());
-//			tempVO.setName(tempStock.getName());
-//			tempVO.setChange_in_percentage(tempStock.getQuote().getChangeInPercent().doubleValue());
-//			tempVO.setPrev_close_price(tempStock.getQuote().getPreviousClose().doubleValue());
-//			returnFollowList.add(tempVO);
-//		}
+
+		ArrayList<FollowVO> followList = followService.getFollowList(vo);
+
+		ArrayList<StockVO> returnFollowList = new ArrayList<StockVO>();
+		for (FollowVO tempFollowVO : followList) {
+			String stockTicker = tempFollowVO.getTicker();
+			StockVO tempVO = new StockVO();
+			tempVO.setTicker(stockTicker);
+			Stock tempStock = null;
+			try {
+				tempStock = YahooFinance.get(stockTicker);
+			} catch (Exception e) {
+				System.out.println("Could not recognise the ticker symbol. Try again.");
+				e.printStackTrace();
+			}
+			tempVO.setCurrent_price(tempStock.getQuote().getPrice().doubleValue());
+			tempVO.setName(tempStock.getName());
+			tempVO.setChange_in_percentage(tempStock.getQuote().getChangeInPercent().doubleValue());
+			tempVO.setPrev_close_price(tempStock.getQuote().getPreviousClose().doubleValue());
+			returnFollowList.add(tempVO);
+		}
+		session.setAttribute("follow_list", returnFollowList);
 
 		return "user/follow";
 	}
@@ -191,7 +194,7 @@ public class UserServiceController {
 			vo.setNickname(nickname);
 			String pfname = request.getParameter("pfname");
 			vo.setPfname(pfname);
-			
+
 			portservice.insertPort(vo);
 			
 		}

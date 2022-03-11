@@ -11,9 +11,11 @@
 <%
     int discoverCounter = 0;
 
-    ArrayList<StockVO> followList = new ArrayList<>();
-    StockVO TSLA = new StockVO("TSLA", "Tesla, Inc.", 100, 100, 10);
-    followList.add(TSLA);
+    ArrayList<StockVO> followList = (ArrayList<StockVO>)session.getAttribute("follow_list");
+
+//    ArrayList<StockVO> followList = new ArrayList<>();
+//    StockVO TSLA = new StockVO("TSLA", "Tesla, Inc.", 100, 100, 10);
+//    followList.add(TSLA);
 
     ArrayList<StockVO> discoverList = null;
     try {
