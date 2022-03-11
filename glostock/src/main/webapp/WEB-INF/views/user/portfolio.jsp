@@ -1,4 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="yahoofinance.YahooFinance"%>
+<%@page import="yahoofinance.Stock"%>
+<%
+  Stock TSLA = YahooFinance.get("TSLA");
+  Stock AAPL = YahooFinance.get("AAPL");
+  Stock MSFT = YahooFinance.get("MSFT");
+  Stock AMZN = YahooFinance.get("AMZN");
+  Stock FB = YahooFinance.get("FB");
+  Stock ADS = YahooFinance.get("ADS.DE");
+%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -48,8 +58,8 @@
             background-color: white !important;
         }
         body {
-      background: linear-gradient(to bottom right, #54E6DE, pink);
-	}
+      		background: linear-gradient(to bottom right, #54E6DE, pink);
+		}
 		.margin_height{
 			height:30px;
 		}
@@ -106,13 +116,10 @@
     <section class="margin_height"></section>
     
 	<div class="container">
-	<form action="#" method="post">
+	<form action="portfolio_insert" method="post" name="regform">
 	<h6>Portfolio&nbsp;&nbsp;
 		<select class="btn btn-outline-dark btn-sm">
 			<option selected>Create New portfolio</option>
-			<option value="1">test1</option>
-			<option value="2">test2</option>
-			<option value="3">test3</option>
 		</select>
 	</h6>
 	<table class="table border border-light border-3">
@@ -126,62 +133,35 @@
       <th scope="col">Price</th>
       <th scope="col" style="text-align:right;">Portfolio Name</th>
       <th style="text-align:left;">
-        <input class="rounded border-0" type="text" size="15">
+        <input class="rounded border-0" type="text" size="15" name="pfname">
       </th>
     </tr>
   </thead>
   <tbody id="tbody">
+    
     <tr>
-      <td style="text-align:center;" scope="row"><strong>1</strong></td>
-      <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
-      <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
+      <td style="text-align:center;" scope="row" id="No" name="pfnum"><strong>1</strong></td>
+      <td><input class="rounded-3 border-1" type="text" size="10" id="ticker" name="ticker"></td>
+      <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction" name="transaction">
 			<option selected>Buy</option>
-  			<option value="1">Sell</option>
-  			<option value="2">Reserve</option>
+  			<option>Sell</option>
+  			<option>Reserve</option>
 		  </select>
 	  </td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
-      <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
-      <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="date" name="date"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="shares" name="shares"></td>
+      <td><input class="rounded-3 border-1" type="text" size="15" id="price" name="price"></td>
+      <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm" name="today_price" onclick="today_price();"></td>
+      <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm" name="clear_row"></td>
     </tr>
-    <tr>
-      <td style="text-align:center;" scope="row"><strong>2</strong></td>
-      <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
-      <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
-			<option selected>Buy</option>
-  			<option value="1">Sell</option>
-  			<option value="2">Reserve</option>
-		  </select>
-	  </td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
-      <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
-      <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
-    </tr>
-    <tr>
-      <td style="text-align:center;" scope="row"><strong>3</strong></td>
-      <td><input class="rounded-3 border-1" type="text" size="10" id="ticker"></td>
-      <td><select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction">
-			<option selected>Buy</option>
-  			<option value="1">Sell</option>
-  			<option value="2">Reserve</option>
-		  </select>
-	  </td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="date"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="shares"></td>
-      <td><input class="rounded-3 border-1" type="text" size="15" id="price"></td>
-      <td style="text-align:center;"><input type="button" value="Get Today's Price" class="btn btn-outline-success btn-sm"></td>
-      <td style="text-align:center;"><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></td>
-    </tr>
+    
   </tbody>
   <tfoot>
   <tr>
   <td></td>
   <td colspan="7" style="text-align: center;">
-  <input type="button" value="Save Changes" class="btn btn-outline-dark btn-sm" onclick="location.href='portfolio_result'">&nbsp;&nbsp;
+  <input class="rounded-3 border-1" type="text" size="15" name="nickname">
+  <input type="submit" value="Save Changes" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
   <input type="button" value="Cancel" class="btn btn-outline-dark btn-sm" onclick="location.href='feed'">&nbsp;&nbsp;
   <input type="button" value="Undo" class="btn btn-outline-dark btn-sm">&nbsp;&nbsp;
   <input type="button" value="Clear" class="btn btn-outline-dark btn-sm" onclick="location.href='portfolio'">&nbsp;&nbsp;
@@ -201,11 +181,31 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
-var count = 4;
+function today_price() {
+	if(document.getElementbyId("ticker").equals("TSLA")){
+		document.getElementbyId("price").val("<%=TSLA.getQuote().getPrice()%>"); 
+		$("#price").val().attr("readonly");
+	} else if(document.getElementbyId("ticker").equals("AAPL")){
+		document.getElementbyId("price").val("<%=AAPL.getQuote().getPrice()%>"); 
+		$("#price").val().attr("readonly");
+	} else if(document.getElementbyId("ticker").equals("AMZN")){
+		document.getElementbyId("price").val("<%=AMZN.getQuote().getPrice()%>");
+		$("#price").val().attr("readonly");
+	} else if(document.getElementbyId("ticker").equals("FB")){
+		document.getElementbyId("price").val("<%=FB.getQuote().getPrice()%>");
+		$("#price").val().attr("readonly");
+	} else if(document.getElementbyId("ticker").equals("ADS")){
+		document.getElementbyId("price").val("<%=ADS.getQuote().getPrice()%>"); 
+		$("#price").val().attr("readonly");
+	}
+	
+}
+
+var No = 2;
 function ADDRow() {
 	
-	var my_tbody = document.getElementById('tbody');
-    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+	var tbody = document.getElementById('tbody');
+    var row = tbody.insertRow(tbody.rows.length); // 하단에 추가
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
@@ -215,19 +215,28 @@ function ADDRow() {
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
     
+    /* cell1.innerHTML = '<center><strong>'+No+'<strong></center>';
     
-    cell1.innerHTML = '<center><strong>'+count+'<strong></center>';
-    count++;
-    cell2.innerHTML = '<input class="rounded-3 border-1" type="text" size="10" id="ticker">';
-    cell3.innerHTML = '<select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction"><option selected>Buy</option><option value="1">Sell</option><option value="2">Reserve</option></select>';
-    cell4.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="date">';
-    cell5.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="shares">';
-    cell6.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="price">';
+    cell2.innerHTML = '<input class="rounded-3 border-1" type="text" size="10" name="ticker'+No+'">';
+    cell3.innerHTML = '<select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" name="transaction'+No+'">"><option selected>Buy</option><option value="1">Sell</option><option value="2">Reserve</option></select>';
+    cell4.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="date'+No+'">';
+    cell5.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="shares'+No+'">';
+    cell6.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="price'+No+'">';
+    cell7.innerHTML = "<center><input type='button' value=\"Get Today's Price\" class='btn btn-outline-success btn-sm'></center>";
+    cell8.innerHTML = '<center><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></center>'; */
+	
+    cell1.innerHTML = '<center><strong>'+No+'<strong></center>';
+    cell2.innerHTML = '<input class="rounded-3 border-1" type="text" id="ticker" size="10" name="ticker">';
+    cell3.innerHTML = '<select class="btn btn-outline-secondary btn-sm" aria-label="Default select example" id="transaction" name="transaction"><option selected>Buy</option><option>Sell</option><option>Reserve</option></select>';
+    cell4.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="date" name="date">';
+    cell5.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" id="shares" name="shares">';
+    cell6.innerHTML = '<input class="rounded-3 border-1" type="text" size="15" name="price" name="price">';
     cell7.innerHTML = "<center><input type='button' value=\"Get Today's Price\" class='btn btn-outline-success btn-sm'></center>";
     cell8.innerHTML = '<center><input type="button" value="Clear Row" class="btn btn-outline-danger btn-sm"></center>';
-	
+    No++;
+    
 }
+
 </script>
 </body>
 </html>
-

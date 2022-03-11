@@ -11,7 +11,10 @@ public class UserVO {
 	private String phone; 
 	private String dataagree; 
 	private Timestamp regdate;
-
+	private String newpassword; 
+	private String newpassword2; 
+	
+	
 	public UserVO() {
 	
 	}
@@ -26,6 +29,25 @@ public class UserVO {
 		this.phone = phone;
 		this.dataagree = dataagree;
 		this.regdate = regdate;
+		this.newpassword = newpassword;
+		this.newpassword2= newpassword2;
+	}
+
+	
+	public String getNewpassword() {
+		return newpassword;
+	}
+
+	public void setNewpassword(String newpassword) {
+		this.newpassword = newpassword;
+	}
+
+	public String getNewpassword2() {
+		return newpassword2;
+	}
+
+	public void setNewpassword2(String newpassword2) {
+		this.newpassword2 = newpassword2;
 	}
 
 	public String getUsername() {

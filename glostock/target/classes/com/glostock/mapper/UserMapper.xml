@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values (#{username},#{nickname},#{email},#{password},#{phone},#{dataagree})
 </insert>
 
+<!--로그인 처리 -->
 <select id="login" 
 resultType="int"
 parameterType="com.glostock.model.UserVO">
@@ -18,6 +19,31 @@ SELECT COUNT(*)
  FROM glo_user
  WHERE email=#{email} and password=#{password}
 </select>
+
+<!--마이페이지 내정보 불러오기 -->
+<select id="mypage" parameterType="String" resultType="com.glostock.model.UserVO">
+	SELECT *
+ 	FROM glo_user
+	 WHERE email=#{email} 
+</select>
+
+<!-- 내정보변경하기 -->
+<update id="update" parameterType="com.glostock.model.UserVO">
+	UPDATE glo_user set 
+	username=#{username}, 
+	nickname= #{nickname},
+	phone=#{phone}
+	where email= #{email} 
+</update>
+
+<!--비밀번호변경하기 -->
+<update id="passwordchange" parameterType="com.glostock.model.UserVO" >
+	UPDATE glo_user set 
+	password=#{newpassword}
+	where email= #{email} 
+</update>
+
+
 
 
 </mapper>
