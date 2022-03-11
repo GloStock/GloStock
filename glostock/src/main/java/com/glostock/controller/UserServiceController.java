@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import com.glostock.model.BoardVO;
 import com.glostock.model.FollowVO;
 import com.glostock.model.PortfolioVO;
 import com.glostock.model.StockVO;
+import com.glostock.service.BoardService;
 import com.glostock.service.FollowService;
 import com.glostock.service.PortfolioService;
 
@@ -38,6 +40,8 @@ public class UserServiceController {
 	@Autowired
 	private PortfolioService portservice;
 	
+	@Autowired
+	private BoardService boardservice;
 	
 	//로그인페이지
 	@RequestMapping("/login")
@@ -65,12 +69,13 @@ public class UserServiceController {
 		} 
 
 	}  
-
+	
+	//회원가입화면
 	@RequestMapping("/join")
 	public String join() {  
 		return "user/join";
 	}
-
+	//회원가입폼
 	@RequestMapping("/joinForm")
 	public String joinForm(UserVO vo, RedirectAttributes RA ) {
 	
@@ -89,19 +94,92 @@ public class UserServiceController {
 		}
 
 	}
-	
+	//회원가입 성공처리
 	@RequestMapping("/join_result")
 	public String join_result() { 
 
 		return "user/join_result";
 		
 	} 
-
+	
+	//유저피드화면
 	@RequestMapping("/feed")
-	public String feed() {
+	public String feed(HttpSession session, Model model,BoardVO vo) {
+		if (session.getAttribute("user_email")==null) { 
+			return "redirect:/user/login"; }
+			
+			else { 
+				
+				ArrayList<BoardVO> list = boardservice.getfeed();
+		
+				model.addAttribute("feed", list);
+		
 		return "user/feed";
+		}
 	}
 
+	
+	//내게시글확인
+	@RequestMapping("/myfeed")
+	public String myfeed(HttpSession session,Model model) { 
+
+		session.getAttribute("user_email");
+		session.getAttribute("user_password");
+		String user_email= (String)session.getAttribute("user_email");
+		
+	
+		
+		BoardVO vo=boardservice.mypage(user_email);
+	
+		String nickname= (String)vo.getNickname();
+		ArrayList<BoardVO> list = boardservice.myfeed(nickname);
+		
+		
+		
+		model.addAttribute("feed", list);
+		
+		
+		
+		return "user/myfeed";
+		
+	} 
+	
+	
+	//피드쓰기화면
+	@RequestMapping("/write")
+	public String write(HttpSession session, Model model )  { 
+	
+		if (session.getAttribute("user_email")==null) { 
+		return "redirect:/user/login"; }
+		
+		else { 
+			session.getAttribute("user_email");
+			session.getAttribute("user_password");
+			String user_email= (String)session.getAttribute("user_email");
+			
+			BoardVO vo=boardservice.mypage(user_email);
+			model.addAttribute("mypage", vo);
+			
+		
+		return "user/write";
+		
+		}
+		}
+	
+	//피드폼처리	
+	@RequestMapping("feedRegister")
+	public String feedRegister(BoardVO vo ) { 
+		
+		boardservice.insertfeed(vo);
+		
+	
+		return "redirect:/user/feed";
+	} 
+	
+	
+	
+	
+	
 	@RequestMapping("/follow")
 	public String follow(HttpSession session) {
 
@@ -156,10 +234,7 @@ public class UserServiceController {
 		return "redirect:/user/follow";
 	}
 
-	@RequestMapping("/write")
-	public String write() {
-		return "user/write";
-	}
+	
 
 	@RequestMapping("/portfolio")
 	public String portfolio() {
@@ -243,20 +318,13 @@ public class UserServiceController {
 	
 	@RequestMapping("divForm") //배당률계산기
 	public String divForm(Model model, CalVO vo) {  
-	
-		
 		model.addAttribute("divForm", vo);
-		
 		return "user/service#second";
-		
 	} 
 	
 	@RequestMapping("compoundForm") //복리수익률계산기
 	public String compoundForm(Model model, CalVO vo) {  
-		
-		
 		model.addAttribute("compoundForm", vo);
-		
 		return "user/service#third";
 		
 	} 

@@ -134,55 +134,10 @@
   </div>
 </header>
 
-  
-
-
 <main class="container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark main-banner">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4">글로스탁 유저멘션 TOP 10</h1>
-      <p class="lead my-3">요즘 뭐가 대세인지 모르겠다고요? <br> 그래서 준비했습니다!</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">더보기</a></p>
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static bg-white">
-          <strong class="d-inline-block mb-2 text-primary">Global</strong>
-          <h3 class="mb-0">월드 리포드 Vol. 3</h3>
-          <div class="mb-1 text-muted">Mar 7</div>
-          <p class="card-text mb-auto">러시아와 우크라이나의 전쟁이 계속되는 가운데.. <br>
-          전쟁 장기화와 더불어 거시경제 영향까지 글로스탁이 다뤄봤습니다.</p>
-          <a href="#" class="stretched-link">이번주 월드 리포드 보기</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-<%--          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>--%>
-          <img src="/resources/img/world-report-thumbnail2.jpg" width="200" height="250">
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static bg-white">
-          <strong class="d-inline-block mb-2 text-success">Weekly</strong>
-          <h3 class="mb-0">위클리 리포트</h3>
-          <div class="mb-1 text-muted">Mar 3</div>
-          <p class="mb-auto">금리인상, 인플레이션, 러시아발전쟁.. 계속되는 악재에 투자자의 
-          마음만 복잡해져갑니다. 반복되는 주식시장 악재, 어떻게 해석해야할까요? <br>글로스탁에서 다뤄보았습니다.<br>
-            </p>
-          <a href="#" class="stretched-link">더 읽기</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-<%--          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>--%>
-          <img src="/resources/img/inflation.jpg" width="200" height="250">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
+<br>
+<br> 
   <div class="row g-5">
     <div class="col-md-8">
       <div style="float:right;">

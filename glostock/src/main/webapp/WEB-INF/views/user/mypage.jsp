@@ -95,12 +95,11 @@ margin:0 auto;
 		<header class="card-header"><h6 class="title"><b>게시글 관리</b> </h6></header>
 		<div class="filter-content">
 			<div class="list-group list-group-flush">
-			  <a href="#" class="list-group-item">내 게시글 보기 </a>
-			  <a href="#" class="list-group-item">게시글 수정</a>
+			  <a href="myfeed " class="list-group-item">내 게시글 보기(수정) </a>
 			</div> 
 		</div>
 		</article> 
-		
+	
 		<article class="card-group-item">
 		<header class="card-header"><h6 class="title"><b>나의 자산</b> </h6></header>
 		<div class="filter-content">
@@ -123,9 +122,8 @@ margin:0 auto;
 		<header class="card-header"><h6 class="title"><b>고객센터</b> </h6></header>
 		<div class="filter-content">
 			<div class="list-group list-group-flush">
-			  <a href="#" class="list-group-item">FAQ</a>
-			  <a href="#" class="list-group-item">문의사항</a>
-			  <a href="#" class="list-group-item">고객센터</a>
+			  <a href="#" class="list-group-item">문의하기</a>
+			
 			</div> 
 		</div>
 	</article> 

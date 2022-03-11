@@ -1,11 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rayjaelee
-  Date: 3/2/22
-  Time: 5:41 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <html>
 <head>
     <title>글쓰기 | Glo Stock</title>
@@ -84,9 +80,7 @@
       <div class="card-header text-light bg-dark"><strong>피드 등록하기</strong></div>
       <div class="card-body">
 
-
-
-        <form role="form" action="register" method="post" id="regform">
+        <form role="form" id="feedregister" name="feedregister" action="feedRegister" method="post" id="regform">
           <div class="form-group">
             <label>제목</label>
             <input class="form-control" name="title" id="title">
@@ -107,7 +101,7 @@
 
           <div class="form-group">
             <label>작성자(별명)</label>
-            <input class="form-control" name="writer" id="writer" readonly>
+            <input class="form-control" name="nickname" id="nickname" placeholder="${mypage.nickname}" value="${mypage.nickname}" readonly>
           </div>
           <div class="text_height_10"></div>
           <button type="submit" class="btn btn-outline-dark btn-sm">등록</button>

@@ -11,14 +11,15 @@ public class BoardVO {
 	    private String ticker; 
 	    private Timestamp regdate; 
 	    private Timestamp updatedate;
+	    private String email;
 
 		public BoardVO() {
 		
 		}
 
 		public BoardVO(int postnum, String title, String nickname, String content, String ticker, Timestamp regdate,
-				Timestamp updatedate) {
-			super();
+				Timestamp updatedate, String email) {
+
 			this.postnum = postnum;
 			this.title = title;
 			this.nickname = nickname;
@@ -26,6 +27,17 @@ public class BoardVO {
 			this.ticker = ticker;
 			this.regdate = regdate;
 			this.updatedate = updatedate;
+			this.email=email; 
+		}
+
+		
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public int getPostnum() {
@@ -47,6 +59,7 @@ public class BoardVO {
 		public String getNickname() {
 			return nickname;
 		}
+		
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
