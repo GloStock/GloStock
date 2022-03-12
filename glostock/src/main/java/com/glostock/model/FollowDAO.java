@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class FollowDAO {
-    String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+    String url = "jdbc:oracle:thin:@localhost:1521/XEPDB1";
     String uid = "glostock";
     String upw = "glostock";
 
@@ -79,8 +79,8 @@ public class FollowDAO {
             pstmt.setString(2, ticker);
             System.out.println("After second set string");
 
-            result = pstmt.executeUpdate(delete_sql);
-
+            result = pstmt.executeUpdate();
+            
             System.out.println("After execute update");
 
         } catch (Exception e) {
