@@ -106,10 +106,8 @@ public class UserServiceController {
 	public String follow(HttpSession session) {
 
 		String nickname = "TestNickname";
-		FollowVO vo = new FollowVO();
-		vo.setNickname(nickname);
 
-		ArrayList<FollowVO> followList = followService.getFollowList(vo);
+		ArrayList<FollowVO> followList = followService.getFollowList(nickname);
 
 		ArrayList<StockVO> returnFollowList = new ArrayList<StockVO>();
 		for (FollowVO tempFollowVO : followList) {
@@ -118,7 +116,7 @@ public class UserServiceController {
 			tempVO.setTicker(stockTicker);
 			Stock tempStock = null;
 			try {
-				tempStock = YahooFinance.get(stockTicker);
+				tempStock = YahooFinance.get("TSLA");
 			} catch (Exception e) {
 				System.out.println("Could not recognise the ticker symbol. Try again.");
 				e.printStackTrace();
@@ -136,22 +134,21 @@ public class UserServiceController {
 
 	@RequestMapping("/addFollow")
 	public String addFollow(@RequestParam("ticker") String ticker, HttpSession session) {
-//		String user_id = (String)session.getAttribute("user_id");
-//		System.out.println(user_id);
-		FollowVO vo = new FollowVO();
-		vo.setTicker(ticker);
-		vo.setNickname("TestNickname");
-		followService.follow(vo);
+
+		String nickname = "TestNickname";
+
+		followService.follow(nickname, ticker);
 
 		return "redirect:/user/follow";
 	}
 
 	@RequestMapping("/deleteFollow")
 	public String deleteFollow(@RequestParam("ticker") String ticker, HttpSession session) {
-		FollowVO vo = new FollowVO();
-		vo.setTicker(ticker);
-		vo.setNickname("TestNickname");
-		followService.deleteFollow(vo);
+
+		String nickname = "TestNickname";
+
+		System.out.println("deleteFollow Checkpoint");
+		followService.unfollow(nickname, ticker);
 
 		return "redirect:/user/follow";
 	}
