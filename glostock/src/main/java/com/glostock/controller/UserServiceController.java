@@ -538,8 +538,8 @@ public class UserServiceController {
 			vo.setEmail(user_email);
 			vo.setPassword(user_password);
 			service.userleave(vo);
-		
-	
+			session.invalidate(); 
+			
 		
 		return "redirect:/";
 		}
