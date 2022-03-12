@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public interface FollowMapper {
 
     public int follow(FollowVO vo);
-    public ResultSet getFollowList(FollowVO vo);
+    public ArrayList<FollowVO> getFollowList(FollowVO vo);
     public int deleteFollow(FollowVO vo);
 
 }

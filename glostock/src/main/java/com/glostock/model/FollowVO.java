@@ -3,27 +3,27 @@ package com.glostock.model;
 import java.sql.Timestamp;
 
 public class FollowVO {
-    private int followNum;
+    private int followID;
     private String ticker;
     private String nickname;
-    private Timestamp timestamp;
+    private Timestamp appendtime;
 
     public FollowVO() {
     }
 
-    public FollowVO(int followNum, String ticker, String nickname, Timestamp timestamp) {
-        this.followNum = followNum;
+    public FollowVO(int followID, String ticker, String nickname, Timestamp appendtime) {
+        this.followID = followID;
         this.ticker = ticker;
         this.nickname = nickname;
-        this.timestamp = timestamp;
+        this.appendtime = appendtime;
     }
 
-    public int getFollowNum() {
-        return followNum;
+    public int getFollowID() {
+        return followID;
     }
 
-    public void setFollowNum(int followNum) {
-        this.followNum = followNum;
+    public void setFollowID(int followNum) {
+        this.followID = followNum;
     }
 
     public String getTicker() {
@@ -42,11 +42,11 @@ public class FollowVO {
         this.nickname = nickname;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getAppendtime() {
+        return appendtime;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setAppendtime(Timestamp timestamp) {
+        this.appendtime = timestamp;
     }
 }

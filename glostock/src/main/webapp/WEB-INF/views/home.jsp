@@ -71,9 +71,10 @@
 				<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 					<div class="feature col">
 						<div class="feature-icon bg-primary bg-gradient">
-							<svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+<%--							<svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>--%>
+							<img src="/resources/img/GloCrypto.png" width="100%">
 						</div>
-						<h2>Featured title</h2>
+						<h2>관심종목, 가상화폐를 팔로우!</h2>
 						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
 						<a href="#" class="icon-link">
 							Call to action
@@ -82,9 +83,10 @@
 					</div>
 					<div class="feature col">
 						<div class="feature-icon bg-primary bg-gradient">
-							<svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+<%--							<svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>--%>
+							<img src="/resources/img/GloPortfolio.png" width="100%">
 						</div>
-						<h2>Featured title</h2>
+						<h2>나의 포트폴리오를 한곳에!</h2>
 						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
 						<a href="#" class="icon-link">
 							Call to action
@@ -93,9 +95,10 @@
 					</div>
 					<div class="feature col">
 						<div class="feature-icon bg-primary bg-gradient">
-							<svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+<%--							<svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>--%>
+							<img src="/resources/img/GloTools.png" width="100%">
 						</div>
-						<h2>Featured title</h2>
+						<h2>필요한 계산 서비스들을 무료로!</h2>
 						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
 						<a href="#" class="icon-link">
 							Call to action

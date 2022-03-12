@@ -12,7 +12,7 @@
     </insert>
 
     <select id="getFollowList"
-            resultType="ResultSet"
+            resultType="com.glostock.model.FollowVO"
             parameterType="com.glostock.model.FollowVO">
         SELECT *
         FROM glo_follow
