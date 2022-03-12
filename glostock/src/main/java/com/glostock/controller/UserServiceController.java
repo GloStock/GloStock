@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import com.glostock.model.BoardVO;
+import com.glostock.model.FeedbackVO;
 import com.glostock.model.FollowVO;
 import com.glostock.model.PortfolioVO;
 import com.glostock.model.StockVO;
@@ -42,6 +43,7 @@ public class UserServiceController {
 	
 	@Autowired
 	private BoardService boardservice;
+
 	
 	//로그인페이지
 	@RequestMapping("/login")
@@ -143,6 +145,42 @@ public class UserServiceController {
 		return "user/myfeed";
 		
 	} 
+	//내 게시글 수정
+	@RequestMapping("modify")
+	public String modify(@RequestParam("postnum") int postnum, Model model) { 
+
+	
+					BoardVO vo= boardservice.feed(postnum);
+					model.addAttribute("feed", vo); 
+	
+					
+		
+		return "user/modify";
+	}
+			
+			
+	//내 게시물 수정 form
+	@RequestMapping("modifyForm")
+	public String modifyForm(BoardVO vo, Model model) { 
+	
+		boardservice.updatefeed(vo);
+		
+		
+		model.addAttribute("updatefeed", vo); 
+		
+		return "redirect:/user/myfeed";
+	}
+	//내 게시물 삭제 
+	@RequestMapping("deletefeed")
+	public String deletefeed (@RequestParam("postnum") int postnum, Model model) { 
+		
+		boardservice.deletefeed(postnum);
+		
+		
+		return "redirect:/user/myfeed";
+	}
+	
+	
 	
 	
 	//피드쓰기화면
@@ -176,8 +214,33 @@ public class UserServiceController {
 		return "redirect:/user/feed";
 	} 
 	
+	//유저문의화면처리
+		@RequestMapping("/userinquiry")
+		public String userinquiry(HttpSession session,Model model) { 
+			
+			session.getAttribute("user_email");
+			session.getAttribute("user_password");
+			String user_email= (String)session.getAttribute("user_email");
+			
+			UserVO vo=service.mypage(user_email);
+			model.addAttribute("mypage", vo);
+			
+			
+		
+			return "user/userinquiry";
+		} 
+		
 	
-	
+		//유저문의화면처리
+		@RequestMapping("userInquiry")
+		public String userInquiry(FeedbackVO vo ) { 
+			
+			int result = service.insertfeedback(vo);
+			
+		
+			return "redirect:/user/mypage";
+		} 	
+		
 	
 	
 	@RequestMapping("/follow")

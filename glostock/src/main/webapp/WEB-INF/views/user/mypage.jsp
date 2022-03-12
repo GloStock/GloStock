@@ -104,7 +104,7 @@ margin:0 auto;
 		<header class="card-header"><h6 class="title"><b>나의 자산</b> </h6></header>
 		<div class="filter-content">
 			<div class="list-group list-group-flush">
-			  <a href="#" class="list-group-item">관심종목 수정</a>
+			  <a href="follow" class="list-group-item">관심종목 수정</a>
 			
 			</div> 
 		</div>
@@ -122,7 +122,7 @@ margin:0 auto;
 		<header class="card-header"><h6 class="title"><b>고객센터</b> </h6></header>
 		<div class="filter-content">
 			<div class="list-group list-group-flush">
-			  <a href="#" class="list-group-item">문의하기</a>
+			  <a href="userinquiry" class="list-group-item">문의하기</a>
 			
 			</div> 
 		</div>

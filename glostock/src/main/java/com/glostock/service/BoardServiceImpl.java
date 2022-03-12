@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.glostock.mapper.BoardMapper;
 import com.glostock.model.BoardVO;
+import com.glostock.model.UserVO;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
@@ -50,6 +51,30 @@ public ArrayList<BoardVO> myfeed(String nickname) {
 	return list;
 }
 
+@Override
+public void updatefeed(BoardVO vo) {
 	
+boolean bool= mapper.updatefeed(vo);
+
+
+}	
+
+@Override
+public BoardVO feed(int postnum) {
+	
+	
+	BoardVO vo=mapper.feed(postnum);
+	
+	return vo;
+
+}
+
+@Override
+public void deletefeed(int postnum) {
+	
+	 mapper.deletefeed(postnum);
+}
+
+
 	
 }

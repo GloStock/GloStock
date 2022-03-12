@@ -2,6 +2,7 @@ package com.glostock.mapper;
 
 import java.util.ArrayList;
 
+import com.glostock.model.FeedbackVO;
 import com.glostock.model.UserVO;
 
 public interface UserMapper {
@@ -12,4 +13,7 @@ public interface UserMapper {
 	public boolean update(UserVO vo);//내정보변경
 	public boolean passwordchange(UserVO vo);//비밀번호변경
 	public boolean userleave(UserVO vo);//비밀번호변경
+	public int insertfeedback(FeedbackVO vo);//유저피드백 받아오기
+	
+	
 }

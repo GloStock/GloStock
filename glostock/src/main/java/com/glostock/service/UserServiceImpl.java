@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.glostock.mapper.UserMapper;
+import com.glostock.model.FeedbackVO;
 import com.glostock.model.UserVO;
 
 @Service("userService")
@@ -64,7 +65,14 @@ public class UserServiceImpl implements UserService{
 	
 	
 	
-	
+	@Override
+	public int insertfeedback(FeedbackVO vo) {
+
+		int result=mapper.insertfeedback(vo);
+		
+		
+		return result;
+	}
 	
 	
 	

@@ -140,9 +140,7 @@
 <br> 
   <div class="row g-5">
     <div class="col-md-8">
-      <div style="float:right;">
-      <a class="btn btn-outline-light" href="write" style="color: #000;"><strong>글쓰기</strong></a>
-      </div>
+     
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         My Feed
       </h3>
@@ -156,13 +154,15 @@
 
         <p> ${good.content}</p>
       
-     
+      <div align="right">
+      <p>
+      <a class="btn btn-outline-light" href="modify?postnum=${good.postnum}" style="color: #000;"><strong>수정하기</strong></a>
+      </p>
+      </div>
       
       
       </article>
 	</c:forEach>
-
-
 
 
 

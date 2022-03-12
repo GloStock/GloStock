@@ -11,6 +11,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values (#{username},#{nickname},#{email},#{password},#{phone},#{dataagree})
 </insert>
 
+<!-- 유저피드백처리  -->
+<insert id="insertfeedback" parameterType="com.glostock.model.FeedbackVO">
+	insert into glo_feedback (title,email,nickname,content)
+		values (#{title},#{email},#{nickname},#{content})
+</insert>
+
+
+
+
 <!--로그인 처리 -->
 <select id="login" 
 resultType="int"

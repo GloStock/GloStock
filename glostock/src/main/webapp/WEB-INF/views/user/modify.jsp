@@ -1,0 +1,135 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
+<html>
+<head>
+    <title>글쓰기 | Glo Stock</title>
+    
+    <style>
+    .box{
+    width:600px;
+    
+    margin:0 auto;
+    }
+    
+    .text_height_40{
+    height:40px;
+    }
+    
+    .text_height_10{
+    height:10px;
+    }
+    
+     body {
+      background: linear-gradient(to bottom right, #54E6DE, pink);
+	}
+    </style>
+</head>
+<body>
+<%@ include file="../include/header.jsp" %>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/user/feed">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/feed">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/follow">My Following</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/service">My Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/portfolio">My Portfolio</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">My Account</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+<div class="box">
+<div class="container">
+
+<div class="row">
+  <div class="text_height_40"></div>
+  <div class="col-lg-12">
+    <h3 class="pb-2 fst-italic border-bottom">Feed Modify</h3>
+  </div>
+  <!-- /.col-lg-12 -->
+  
+</div>
+<!-- /.row -->
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header text-light bg-dark"><strong>피드 수정하기</strong></div>
+      <div class="card-body">
+
+        <form role="form" id="modify" name="modify" action="modifyForm" method="post">
+           
+            <div class="form-group">
+            <label>글번호</label>
+            <input class="form-control" name="postnum" id="postnum" value="${feed.postnum}" readonly>
+          </div>
+          <div class="text_height_10"></div>
+        
+          <div class="form-group">
+            <label>제목</label>
+            <input class="form-control" name="title" id="title" value="${feed.title}">
+          </div>
+          <div class="text_height_10"></div>
+         
+          <div class="form-group">
+            <label>티커심볼</label>
+            <input class="form-control" name="ticker" id="ticker" value="${feed.ticker}">
+          </div>
+          <div class="text_height_10"></div>
+		  
+          <div class="form-group">
+            <label>내용</label>
+            <textarea class="form-control" style="height:300px;" name="content" id="content">${feed.content}</textarea>
+          </div>
+          <div class="text_height_10"></div>
+
+          <div class="form-group">
+            <label>작성자(별명)</label>
+            <input class="form-control" name="nickname" id="nickname" placeholder="${feed.nickname}" value="${feed.nickname}" readonly>
+          </div>
+          <div class="text_height_10"></div>
+          <button type="submit" class="btn btn-outline-dark btn-sm">수정하기</button>
+       		 <button type="button" onclick="location.href='deletefeed?postnum=${feed.postnum}'" class="btn btn-outline-dark btn-sm">삭제하기</button>
+       		<button type="button" onclick="location.href='myfeed'" class="btn btn-outline-dark btn-sm">취소</button>
+        </form>
+
+
+
+      </div>
+      <!--  end card-body -->
+    </div>
+    <!--  end card-body -->
+  </div>
+  <!-- end card -->
+</div>
+<!-- /.row -->
+</div>
+</div>
+</main>
+<div class="text_height_40"></div>
+<%@ include file="../include/footer.jsp" %>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.glostock.service;
 
+import com.glostock.model.FeedbackVO;
 import com.glostock.model.UserVO;
 
 public interface UserService {
@@ -10,5 +11,6 @@ public interface UserService {
 	public void update(UserVO vo);//회원정보변경
 	public void passwordchange(UserVO vo);//비밀번호변경
 	public void userleave(UserVO vo);//회원탈퇴
+	public int insertfeedback(FeedbackVO vo); //유저피드백
 	
 }
