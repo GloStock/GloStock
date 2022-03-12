@@ -28,18 +28,12 @@ public class PortfolioServiceImpl implements PortfolioService {
 	
 	@Override
 	public void insertPort(PortfolioVO vo) {
-		System.out.println("==서비스==");
-		System.out.println("ticker : "+vo.getTicker()+", transaction: "+vo.getTransaction());
 		mapper.insert(vo);
-		System.out.println("insert완료");
-		
-		/*for(int i=0;i<list.size();i++) {
-			System.out.println("==서비스==");
-			System.out.println("ticker : " + list.get(i).getTicker() + ", transaction: " + list.get(i).getTransaction());
-			mapper.insert(list.get(i));
-			System.out.println("insert완료");
-		}*/
-		
-		
+	}
+	
+	@Override
+	public ArrayList<PortfolioVO> getList_nick(String nickname) {
+		ArrayList<PortfolioVO> list = mapper.select_nick(nickname);
+		return list;
 	}
 }
