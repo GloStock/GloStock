@@ -297,7 +297,12 @@ public class UserServiceController {
 	
 
 	@RequestMapping("/portfolio")
-	public String portfolio() {
+	public String portfolio(HttpSession session) {
+		String user_email = (String)session.getAttribute("user_email");
+		BoardVO vo = boardservice.mypage(user_email);
+		
+		String nickname= (String)vo.getNickname();
+		session.setAttribute("nickname", nickname);
 		return "user/portfolio";
 	}
 	
@@ -314,18 +319,12 @@ public class UserServiceController {
 
 		//배열의 인덱스를 for문으로 돌려서 인덱스 별로 vo에 저장 그리고 서비스로
 		for(int i=0;i<ticker.length;i++) {
-			System.out.println("==컨트롤러==");
-			System.out.println("ticker : "+ticker[i]);
 			vo.setTicker(ticker[i]);
-			System.out.println("transaction : " + transaction[i]);
 			vo.setTransaction(transaction[i]);
-			System.out.println("shares : "+shares[i]);
 			vo.setShares(shares[i]);
-			System.out.println("price : "+price[i]);
 			vo.setPrice(price[i]);
 			
 			String nickname = request.getParameter("nickname");		
-			System.out.println("nickname : "+nickname);
 			vo.setNickname(nickname);
 			String pfname = request.getParameter("pfname");
 			vo.setPfname(pfname);
@@ -342,20 +341,28 @@ public class UserServiceController {
 	
 	@RequestMapping(value="/portfolio_result")
 	public String portfolio_result(HttpSession session, PortfolioVO vo,Model model) {
-		System.out.println("==controller==");
 		String pfname = (String)session.getAttribute("pfname");
-		System.out.println("pfname : " + pfname);
 		ArrayList<PortfolioVO> DB = portservice.getList(pfname);
 		model.addAttribute("port", DB);
 			
 		return "user/portfolio_result";
 	}
 	
+	@RequestMapping("/portfolio_list")
+	public String portfolio_list(HttpSession session,Model model) {
+		String nickname = (String)session.getAttribute("nickname");
+		
+		ArrayList<PortfolioVO> list = portservice.getList_nick(nickname);
+		for(PortfolioVO vo:list) {
+			session.setAttribute("pfname", vo.getPfname());
+		}
+		model.addAttribute("list", list);
+		return "user/portfolio_list";
+	}
+	
 	@RequestMapping("/portfolio_delete")
 	public String pf_delete(HttpSession session) {
-		System.out.println("==controller==");
 		String pfname = (String)session.getAttribute("pfname");
-		System.out.println("포트폴리오 이름 : " + pfname);
 		portservice.delete(pfname);
 		
 		return "redirect:/user/portfolio";
