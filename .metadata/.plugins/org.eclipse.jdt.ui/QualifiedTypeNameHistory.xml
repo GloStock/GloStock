@@ -10,7 +10,6 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.glostock.service.UserService"/>
     <fullyQualifiedTypeName name="com.glostock.model.UserVO"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="com.glostock.model.PortfolioVO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
@@ -22,4 +21,6 @@
     <fullyQualifiedTypeName name="com.glostock.mapper.BoardMapper"/>
     <fullyQualifiedTypeName name="com.glostock.model.BoardVO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.glostock.model.FeedbackVO"/>
 </qualifiedTypeNameHistroy>

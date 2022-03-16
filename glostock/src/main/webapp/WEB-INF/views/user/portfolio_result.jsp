@@ -129,10 +129,10 @@
       <th scope="col" style="text-align:center;">회사이름</th>
       <th scope="col" style="text-align:center;">주가</th>
       <th scope="col" style="text-align:center;">등락률(%)</th>
-      <th scope="col" style="text-align:center;">주식수</th>
+      <th scope="col" style="text-align:center;">거래량</th>
       <th scope="col" style="text-align:center;">주문상태</th>
 
-      <th scope="col" style="text-align:center;">분할</th>
+      <th scope="col" style="text-align:center;">주식수</th>
       <th scope="col" style="text-align:center;">평균가(50일)</th>
       <th scope="col" style="text-align:center;">일일 상한가</th>
       <th scope="col" style="text-align:center;">일일 하한가</th>
@@ -330,24 +330,24 @@
   <tfoot>
   <tr class="table-success">
   <th colspan="2" style="text-align:center;">합계</th>
-  <th colspan="2">내가 산 주식수</th>
-  <th class="text-danger" style="font-weight: bold; text-align: right;">등락률 계</th>
+  <th colspan="2">종목수</th>
+  <th class="text-danger" style="font-weight: bold; text-align: right;">등락률(계)</th>
   <th colspan="4">
-  <th colspan="2" style="text-align:center;">Some</th>
-  <th style="text-align:center;">Some</th>
-  <th class="text-danger" style="text-align:center;" font-weight: bold;">Some</th>
+  <th colspan="2" style="text-align:center;"></th>
+  <th style="text-align:center;">수익률(%)</th>
+  <th class="text-danger" style="text-align:center;" font-weight: bold;">손익(실)금액</th>
   </tr>
   <tr>
   <td colspan="2"></td>
   
-  <td colspan="2" style="font-weight: bold;"><%=(no-1)%>&nbsp;Stocks</td>
+  <td colspan="2" style="font-weigh.t: bold;"><%=(no-1)%>&nbsp;Stocks</td>
   
   <td class="text-danger" style="font-weight: bold; text-align: right;">
   +0.00%
   </td>
   <td colspan="4"></td>
   
-  <td colspan="2" style="text-align:center;">117948.73</td>
+  <td colspan="2" style="text-align:center;"></td>
   <td style="text-align:center;">0.00</td>
    <td class="text-danger" style="text-align:right; font-weight: bold;">-455.89</td>
   </tr>
