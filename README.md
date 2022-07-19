@@ -1,4 +1,4 @@
-# glostock
+# GloStock_Project Summary
 ![슬라이드1](https://user-images.githubusercontent.com/95738245/179717568-568f96d5-7381-4119-a15a-d6e87ad05395.PNG)
 ![슬라이드2](https://user-images.githubusercontent.com/95738245/179717578-b47f0182-f6bb-47f2-8db7-d4036e549594.PNG)
 ![슬라이드3](https://user-images.githubusercontent.com/95738245/179717583-9ce7652f-cc1a-47f2-a021-7039669cf8ff.PNG)
